@@ -1,0 +1,27 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    background: lightgrey;
+    height: 64px;
+    width: 100%;	
+    border: 1px solid #979797;	
+    background-color: #D8D8D8;
+}
+
+.NavItem {
+    height: 24px;	
+    width: 80px;	
+    color: #777777;	
+    font-family: "Helvetica Neue";	
+    font-size: 18px;	
+    font-weight: bold;	
+    line-height: 23px;
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+ul {
+    margin-right: 22px;
+}

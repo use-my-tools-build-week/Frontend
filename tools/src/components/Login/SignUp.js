@@ -2,6 +2,7 @@ import React from 'react';
 import '../../App.css';
 import './Login.css';
 import {Link} from 'react-router-dom';
+import Logo from './Imgs/Logo.svg';
 
 
 class SignUp extends React.Component {
@@ -11,24 +12,30 @@ class SignUp extends React.Component {
     render() {
         return (
             <div className="LoginContainer">
-               <div className="LoginNav">
-                    <h1 className="Logo">Use My Tools</h1>
-                    <a className="Help" href="#">Help</a>
+                <div className="SideDiv">
+
                 </div>
                 <div className="Login">
-                    <h2 className="sign-up">Sign Up</h2>
-                    <form className="formContainer">
+                <form className="formContainer">
+                        <img className="Logo" src={Logo} />
+                        <h2 className="sign-up">Sign Up</h2>
                         <p className="email">Email</p>
                         <input placeholder="Example@gmail.com" 
                         type="text" name="email"/>
                         <p className="password">Password</p>
                         <input placeholder="*********" 
                         type="password" name="password"/>
-                        <Link to="/"><p className="already-have-account-sig">Already have an account? Login</p></Link>
-                        <button className="button-1">Sign Up</button>
+                        <div className="ButtonContainer">
+                            
+                            <button className="button3">Create My Account</button>
+                        </div>
+                        {/* <div className="CheckContainer">
+                            <input className="Checkbox" type="checkbox" name="accept" />
+                            <p className="checkbox-label">I accept the Terms and Conditions</p>
+                        </div> */}
+                        
+                        <p className="ForgotPassword">Forgot Password?</p>
                     </form>
-                    
-                    
                 </div> 
             </div>
             

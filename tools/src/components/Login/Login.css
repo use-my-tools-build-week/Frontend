@@ -2,106 +2,96 @@
     box-sizing: border-box;
 }
 
-
-.LoginNav {
+ 
+.LoginContainer{
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 75px;
-    background: lightgrey;
-    height: 64px;
-    width: 100%;	
-    border: 1px solid #979797;	
-    background-color: #D8D8D8;
+    
+}
+
+.SideDiv {
+    width: 50%;
+    background: #617ac7;
+    min-height: 100vh;
 }
 
 .Logo {
-    /* height: 29px;	
-    width: 140px;	 */
-    color: #777777;	
-    font-family: Helvetica Neue;	
-    font-size: 22px;	
-    font-weight: bold;	
-    line-height: 28px;
-    margin-left: 22px;
+    height: 88px;	
+    width: 394px;
+    margin-top: 298px;
     
 }
-
-.Help {	
-    height: 24px;	
-    width: 40px;	
-    color: #777777;	
-    font-family: "Helvetica Neue";	
-    font-size: 18px;	
-    font-weight: bold;	
-    line-height: 23px;
-    text-decoration: none;
-    margin-right: 34px;
-}
-
 .Login {	
-    height: 614px;	
-    width: 512px;	
+    min-height: 100vh;	
+    width: 50%;	
     border: 1px solid #979797;	
-    background-color: #D8D8D8;
-    margin: 0 auto;
-    margin-top: 101px;
+    background-color: white;
 }
 
 .sign-up {	
-    height: 47px;	
-    width: 135px;	
-    color: #777777;	
-    font-family: "Helvetica Neue";	
-    font-size: 36px;	
+    height: 32px;	
+    width: 328px;	
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 24px;	
     font-weight: bold;	
-    line-height: 46px;
-    margin: 101px 0 0 120px;
+    line-height: 32px;
+    margin: 24px 0 24px 50px;
 }
 
 .loginBtn {	
-    height: 47px;	
-    width: 96px;	
-    color: #777777;	
-    font-family: "Helvetica Neue";	
-    font-size: 36px;	
+    height: 32px;	
+    width: 328px;	
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 24px;	
     font-weight: bold;	
-    line-height: 46px;
-    margin: 101px 0 0 120px;
+    line-height: 32px;
+    margin: 24px 0 24px 50px;
 }
 
 .email {	
-    height: 19px;	
-    width: 38px;	
-    color: #777777;	
-    font-family: "Helvetica Neue";	
-    font-size: 14px;	
-    font-weight: bold;	
-    line-height: 18px;
+    height: 24px;	
+    width: 73px;	
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 16px;	
+    line-height: 24px;
+    margin-left: 39px;
 }
 
 .password {	
-    height: 19px;	
-    width: 67px;	
-    color: #777777;	
-    font-family: "Helvetica Neue";	
-    font-size: 14px;	
-    font-weight: bold;	
-    line-height: 18px;
-    margin-top: 13px;
+    height: 24px;	
+    width: 73px;	
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 16px;	
+    line-height: 24px;
+    margin-top: 8px;
+    margin-left: 55px;
 }
 
 input {	
-    height: 30px;	
-    width: 272px;	
-    border: 2px solid #777777;	
-    border-radius: 3px;	
-    background-color: #FFFFFF;
-    
+    height: 32px;	
+    width: 328px;	
+    opacity: 0.25;	
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 14px;	
+    line-height: 20px;
+    margin-left: 40px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+::placeholder {
+    color: black;
 }
 
  .formContainer{
-    margin: 44px 0 0 120px;
+    margin: 0 auto;
+    max-width: 400px;
+    text-align: center;
+    background: white;
 }
 
 .need-an-account-sig {	
@@ -128,15 +118,79 @@ input {
 }
 
 .button-1 {	
-    height: 32px;	
-    width: 200px;	
+    height: 40px;	
+    width: 160px;
     color: #FFFFFF;	
-    font-family: "Helvetica Neue";	
-    font-size: 14px;	
+    font-family: "Open Sans";	
+    font-size: 16px;	
     font-weight: bold;	
-    line-height: 16px;	
+    line-height: 24px;	
     text-align: center;
-    background: #767676;
-    margin-top: 45px;
-    margin-left: 32px;
+    background: #617ac7;
+    margin-left: 38px;
+    margin-right: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+.button-2 {
+    height: 40px;	
+    width: 160px;
+    color: #00A0FF;	
+    font-family: "Open Sans";	
+    font-size: 16px;	
+    font-weight: bold;	
+    line-height: 24px;	
+    text-align: center;
+    margin-top: 10px;
+    border: 1px solid #00a0ff;
+    cursor: pointer;
+    background: white;
+    border-radius: 5px;
+}
+
+.button3 {
+    width: 328px;
+    height: 40px;	
+    color: #FFFFFF;	
+    font-family: "Open Sans";	
+    font-size: 16px;	
+    font-weight: bold;	
+    line-height: 24px;	
+    text-align: center;
+    background: #617ac7;
+    margin-left: 40px;
+    margin-top: 10px;
+}
+
+.or {
+    color: grey;
+    margin-top: 32px;
+}
+
+.ForgotPassword {
+    color: #00a0ff;
+    cursor: pointer;
+    margin-top: 24px;
+}
+
+.Checkbox {
+    height: 16px;
+    width: 16px;
+    
+}
+
+.checkbox-label {	
+    height: 20px;	
+    width: 286px;	
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 14px;	
+    line-height: 20px;
+}
+
+.CheckContainer {
+    display: flex;
 }
