@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../App.css';
 import './Login.css';
+import {Link} from 'react-router-dom';
 
 class Login extends React.Component {
 
@@ -22,7 +23,7 @@ class Login extends React.Component {
                         <p className="password">Password</p>
                         <input placeholder="*********" 
                         type="password" name="password"/>
-                        <p className="need-an-account-sig">Need an account? <a className="sigLink" href="#">Sign Up</a></p>
+                        <Link to="/signup"><p className="need-an-account-sig">Need an account? Sign Up</p></Link>
                         <button className="button-1">Login</button>
                     </form>
                     

@@ -48,6 +48,17 @@
     margin-top: 101px;
 }
 
+.sign-up {	
+    height: 47px;	
+    width: 135px;	
+    color: #777777;	
+    font-family: "Helvetica Neue";	
+    font-size: 36px;	
+    font-weight: bold;	
+    line-height: 46px;
+    margin: 101px 0 0 120px;
+}
+
 .loginBtn {	
     height: 47px;	
     width: 96px;	
@@ -105,8 +116,15 @@ input {
     text-decoration: underline;
 }
 
-.sigLink {
-    color: #777777;
+.already-have-account-sig {
+    height: 19px;	
+    width: 218px;	
+    color: #777777;	
+    font-family: "Helvetica Neue";	
+    font-size: 14px;	
+    font-weight: bold;	
+    line-height: 18px;
+    margin-top: 14px;
 }
 
 .button-1 {	

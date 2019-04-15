@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../App.css';
 import './Login.css';
+import {Link} from 'react-router-dom';
+import { fromEventPattern } from 'rxjs';
 
 class SignUp extends React.Component {
 
@@ -14,7 +16,7 @@ class SignUp extends React.Component {
                     <a className="Help" href="#">Help</a>
                 </div>
                 <div className="Login">
-                    <h2 className="loginBtn">Login</h2>
+                    <h2 className="sign-up">Sign Up</h2>
                     <form className="formContainer">
                         <p className="email">Email</p>
                         <input placeholder="Example@gmail.com" 
@@ -22,8 +24,8 @@ class SignUp extends React.Component {
                         <p className="password">Password</p>
                         <input placeholder="*********" 
                         type="password" name="password"/>
-                        <p className="need-an-account-sig">Already have an account? <a href="#" className="sigLink">Login</a></p>
-                        <button className="button-1">Login</button>
+                        <Link to="/"><p className="already-have-account-sig">Already have an account? Login</p></Link>
+                        <button className="button-1">Sign Up</button>
                     </form>
                     
                     
