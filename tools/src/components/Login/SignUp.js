@@ -2,7 +2,7 @@ import React from 'react';
 import '../../App.css';
 import './Login.css';
 import {Link} from 'react-router-dom';
-import { fromEventPattern } from 'rxjs';
+
 
 class SignUp extends React.Component {
 
