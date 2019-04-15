@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.LoginNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    background: lightgrey;
+    height: 64px;
+    width: 1024px;	
+    border: 1px solid #979797;	
+    background-color: #D8D8D8;
+}
+
+.Logo {
+    /* height: 29px;	
+    width: 140px;	 */
+    color: #777777;	
+    font-family: Helvetica Neue;	
+    font-size: 22px;	
+    font-weight: bold;	
+    line-height: 28px;
+    margin-left: 22px;
+    
+}
+
+.Help {	
+    height: 24px;	
+    width: 40px;	
+    color: #777777;	
+    font-family: "Helvetica Neue";	
+    font-size: 18px;	
+    font-weight: bold;	
+    line-height: 23px;
+    text-decoration: none;
+    margin-right: 34px;
+}
+
+.Login {	
+    height: 614px;	
+    width: 512px;	
+    border: 1px solid #979797;	
+    background-color: #D8D8D8;
+    margin: 0 auto;
+    margin-top: 101px;
+}
+
+.loginBtn {	
+    height: 47px;	
+    width: 96px;	
+    color: #777777;	
+    font-family: "Helvetica Neue";	
+    font-size: 36px;	
+    font-weight: bold;	
+    line-height: 46px;
+    margin: 101px 0 0 120px;
+}
+
+.email {	
+    height: 19px;	
+    width: 38px;	
+    color: #777777;	
+    font-family: "Helvetica Neue";	
+    font-size: 14px;	
+    font-weight: bold;	
+    line-height: 18px;
+}
+
+.password {	
+    height: 19px;	
+    width: 67px;	
+    color: #777777;	
+    font-family: "Helvetica Neue";	
+    font-size: 14px;	
+    font-weight: bold;	
+    line-height: 18px;
+    margin-top: 13px;
+}
+
+input {	
+    height: 30px;	
+    width: 272px;	
+    border: 2px solid #777777;	
+    border-radius: 3px;	
+    background-color: #FFFFFF;
+    
+}
+
+ .formContainer{
+    margin: 44px 0 0 120px;
+}
+
+.need-an-account-sig {	
+    height: 19px;	
+    width: 178px;	
+    color: #777777;	
+    font-family: "Helvetica Neue";	
+    font-size: 14px;	
+    font-weight: bold;	
+    line-height: 18px;
+    margin-top: 14px;
+    text-decoration: underline;
+}
+
+.sigLink {
+    color: #777777;
+}
+
+.button-1 {	
+    height: 32px;	
+    width: 200px;	
+    color: #FFFFFF;	
+    font-family: "Helvetica Neue";	
+    font-size: 14px;	
+    font-weight: bold;	
+    line-height: 16px;	
+    text-align: center;
+    background: #767676;
+    margin-top: 45px;
+    margin-left: 32px;
+}

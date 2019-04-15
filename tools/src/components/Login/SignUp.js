@@ -1,5 +1,6 @@
 import React from 'react';
-import '../App.css'
+import '../../App.css';
+import './Login.css';
 
 class SignUp extends React.Component {
 
@@ -9,20 +10,20 @@ class SignUp extends React.Component {
         return (
             <div className="LoginContainer">
                <div className="LoginNav">
-                    <h1>Use My Tools</h1>
-                    <a href="#">Help</a>
+                    <h1 className="Logo">Use My Tools</h1>
+                    <a className="Help" href="#">Help</a>
                 </div>
                 <div className="Login">
-                    <h2>Sign Up</h2>
-                    <form>
-                        <p>Email</p>
+                    <h2 className="loginBtn">Login</h2>
+                    <form className="formContainer">
+                        <p className="email">Email</p>
                         <input placeholder="Example@gmail.com" 
                         type="text" name="email"/>
-                        <p>Password</p>
+                        <p className="password">Password</p>
                         <input placeholder="*********" 
                         type="password" name="password"/>
-                        <p>Already have an account? Log in</p>
-                        <button>Sign Up</button>
+                        <p className="need-an-account-sig">Already have an account? <a href="#" className="sigLink">Login</a></p>
+                        <button className="button-1">Login</button>
                     </form>
                     
                     
