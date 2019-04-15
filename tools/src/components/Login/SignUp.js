@@ -6,7 +6,20 @@ import Logo from './Imgs/Logo.svg';
 
 
 class SignUp extends React.Component {
+    constructor(){
+        super();
+        this.state ={
+            email: '',
+            password: ''
+        }
+    }
 
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
 
 
     render() {
@@ -21,10 +34,16 @@ class SignUp extends React.Component {
                         <h2 className="sign-up">Sign Up</h2>
                         <p className="email">Email</p>
                         <input placeholder="Example@gmail.com" 
-                        type="text" name="email"/>
+                        type="text" name="email"
+                        onChange={this.handleChange}
+                        value={this.state.email}
+                        />
                         <p className="password">Password</p>
                         <input placeholder="*********" 
-                        type="password" name="password"/>
+                        type="password" name="password"
+                        onChange={this.handleChange}
+                        value={this.state.password}
+                        />
                         <div className="ButtonContainer">
                             
                             <button className="button3">Create My Account</button>
