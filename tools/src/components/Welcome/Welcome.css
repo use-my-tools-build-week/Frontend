@@ -1,0 +1,65 @@
+.Container {
+    height: 1036px;	
+    width: 100%;	
+    border: 1px solid #979797;	
+    background-color: #FFFFFF;
+}
+
+.ContentWrapper {
+ width: 700px;
+ margin: 0 auto;
+ margin-top: 231px;
+ text-align: center;
+}
+
+.welcome {	
+    height: 47px;	
+    width: 170px;	
+    color: #777777;	
+    font-family: "Helvetica Neue";	
+    font-size: 36px;	
+    font-weight: bold;	
+    line-height: 46px;
+    margin-bottom: 27px;
+    margin-left: 30px;
+}
+
+.do-you-have-any-tool {	
+    height: 47px;	
+    width: 759px;	
+    color: #777777;	
+    font-family: "Helvetica Neue";	
+    font-size: 36px;	
+    font-weight: bold;	
+    line-height: 46px;
+}
+
+.YesBtn {	
+    height: 40px;	
+    width: 200px;	
+    color: #FFFFFF;	
+    font-family: "Helvetica Neue";	
+    font-size: 14px;	
+    font-weight: bold;	
+    line-height: 16px;	
+    text-align: center;
+    background: #767676;
+    margin-left: 60px;
+}
+
+.NoBtn {	
+    height: 40px;	
+    width: 200px;	
+    color: #777777;	
+    font-family: "Helvetica Neue";	
+    font-size: 14px;	
+    font-weight: bold;	
+    line-height: 16px;	
+    text-align: center;
+    margin-left: 142px;
+}
+
+.BtnContainer{
+    margin-top: 75px;
+}
+
