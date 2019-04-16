@@ -3,6 +3,9 @@ import '../../App.css';
 import './Login.css';
 import {Link} from 'react-router-dom';
 import Logo from './Imgs/Logo.svg';
+import {connect} from 'react-redux';
+import {ActionSignUp} from '../../Actions/Actions';
+import {withRouter} from 'react-router-dom';
 
 
 class SignUp extends React.Component {
@@ -21,6 +24,16 @@ class SignUp extends React.Component {
         })
     }
 
+    onSubmit = e => {
+        e.preventDefault();
+        this.props.ActionSignUp(this.state);
+
+        this.setState({
+            email:'',
+            password:''
+        })
+    }
+
 
     render() {
         return (
@@ -29,7 +42,7 @@ class SignUp extends React.Component {
 
                 </div>
                 <div className="Login">
-                <form className="formContainer">
+                <form className="formContainer" onSubmit={this.onSubmit}>
                         <img className="Logo" src={Logo} />
                         <h2 className="sign-up">Sign Up</h2>
                         <p className="email">Email</p>
@@ -46,7 +59,7 @@ class SignUp extends React.Component {
                         />
                         <div className="ButtonContainer">
                             
-                            <button className="button3">Create My Account</button>
+                            <button className="button3" type="submit">Create My Account</button>
                         </div>
                         {/* <div className="CheckContainer">
                             <input className="Checkbox" type="checkbox" name="accept" />
@@ -62,4 +75,5 @@ class SignUp extends React.Component {
     }
 }
 
-export default SignUp;
+export default withRouter(
+    connect(null, {ActionSignUp})(SignUp));

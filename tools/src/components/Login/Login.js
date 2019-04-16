@@ -3,6 +3,10 @@ import '../../App.css';
 import './Login.css';
 import {Link} from 'react-router-dom';
 import Logo from './Imgs/Logo.svg'
+import {connect} from 'react-redux';
+import {ActionLogin} from '../../Actions/Actions';
+import {withRouter} from 'react-router-dom';
+
 
 class Login extends React.Component {
     constructor(){
@@ -20,8 +24,15 @@ class Login extends React.Component {
         })
     }
 
-    onSubmit = () => {
-        
+
+    onSubmit = (e) => {
+        e.preventDefault();
+        this.props.ActionLogin(this.state)
+
+        this.setState({
+            email: '',
+            password: ''
+        })
     }
 
     render() {
@@ -31,7 +42,7 @@ class Login extends React.Component {
 
                 </div>
                 <div className="Login">
-                    <form className="formContainer">
+                    <form className="formContainer" onSubmit={this.onSubmit}>
                         <img className="Logo" src={Logo} />
                         <h2 className="loginBtn">Login</h2>
                     
@@ -48,7 +59,7 @@ class Login extends React.Component {
                         value={this.state.password}
                         />
                         <div className="ButtonContainer">
-                            <Link to="/welcome"><button className="button-1">Login</button></Link>
+                            <button type="submit" className="button-1">Login</button>
                             <Link to="/signup"><button className="button-2">Sign Up</button></Link>
                         </div>
                         <p className="or">OR</p>
@@ -63,4 +74,5 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+export default withRouter(
+     connect(null, {ActionLogin})(Login));
