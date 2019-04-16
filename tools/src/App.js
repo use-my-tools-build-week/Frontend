@@ -16,10 +16,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Route exact path="/" render={()=> <Login />} />
-        <Route exact path="/signup" component={SignUp} />
-        <Route path="/welcome"  component={Welcome} /> 
-        <Route path="/addtool" component={AddToolPage} />
+        {/* <Route exact path="/" render={()=> <Login />} />
+        <Route exact path="/signup" component={SignUp} /> */}
+        <Route path="/"  component={Welcome} /> 
+        {/* <Route path="/addtool" component={AddToolPage} /> */}
       </div>
     );
   }
