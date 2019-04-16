@@ -2,26 +2,29 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 75px;
-    background: lightgrey;
-    height: 64px;
     width: 100%;	
     border: 1px solid #979797;	
-    background-color: #D8D8D8;
+    height: 48px;		
+    background-color: #617BC9;
 }
 
 .NavItem {
     height: 24px;	
     width: 80px;	
-    color: #777777;	
-    font-family: "Helvetica Neue";	
-    font-size: 18px;	
+    color: white;
+    font-family: "Open Sans";	
+    font-size: 16px;	
     font-weight: bold;	
-    line-height: 23px;
-    text-decoration: none;
+    line-height: 24px;
     margin: 0 20px;
+    text-decoration: none;
 }
 
 ul {
     margin-right: 22px;
+}
+
+.WLogo {
+    height: 41.1px;	
+    width: 183.61px;
 }
