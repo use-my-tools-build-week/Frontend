@@ -6,6 +6,7 @@ import {Route} from 'react-router-dom';
 import Welcome from './components/Welcome/Welcome';
 import AddToolPage from './components/AddTool/AddToolPage';
 import PrivateRoute from './PrivateRoute';
+import Home from './components/Home/Home';
 
 
 
@@ -20,6 +21,7 @@ class App extends Component {
         <Route exact path="/signup" component={SignUp} />
         <PrivateRoute path="/welcome"  component={Welcome} /> 
         <Route path="/addtool" component={AddToolPage} />
+        <Route path="/home" component={Home} />
       </div>
     );
   }

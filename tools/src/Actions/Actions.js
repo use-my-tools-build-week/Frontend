@@ -1,5 +1,6 @@
 
 import AxiosAuth from '../AxiosAuth';
+import axios from 'axios';
 
 export const FETCHING = 'FETCHING';
 export const SUCCESS = 'SUCCESS';
@@ -50,19 +51,20 @@ export function ActionSignUp(signups) {
     }
 }
 
-const FetchTools = () => dispatch => {
-    dispatch({type: GET_DATA_FETCH})
-    AxiosAuth().get('https://umtbackend.herokuapp.com/api/tools')
-    .then(res => {
+export const FetchTools = () => dispatch => {
+    dispatch({ type: GET_DATA_FETCH });
+    axios.get('https://umtbackend.herokuapp.com/api/tools')
+      .then(res => {
+          console.log(res)
         dispatch({
-            type: GET_DATA_SUCCESS,
-            payload: res.data
-        })
-    })
-    .catch(() => {
+          type: GET_DATA_SUCCESS,
+          payload: res.data
+        });
+      })
+      .catch(() => {
         dispatch({
-            type: GET_DATA_ERROR,
-            payload: 'Failed to Fetch Data'
-        })
-    })
-}
+          type: GET_DATA_ERROR,
+          payload:'ERROR'
+        });
+      });
+  };

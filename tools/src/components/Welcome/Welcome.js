@@ -14,7 +14,7 @@ const Welcome = () => {
                 <p className="do-you-have-any-tool">Do you have any tools you want to lend out?</p>
                 <div className="BtnContainer">
                     <Link to="/addtool"><button className="YesBtn">Yes!</button></Link>
-                    <button className="NoBtn">Not right now</button>
+                    <Link to="/home"><button className="NoBtn">Not right now</button></Link>
                 </div>
             </div>
         </div>

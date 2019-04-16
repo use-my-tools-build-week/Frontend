@@ -64,8 +64,11 @@ class Login extends React.Component {
                             <button type="submit" className="button-1">Login</button>
                             <Link to="/signup"><button className="button-2">Sign Up</button></Link>
                         </div>
-                        <p className="or">OR</p>
-                        <p className="ForgotPassword">Forgot Password?</p>
+                        <div className="bottom">
+                           <p className="or">OR</p>
+                           <p className="ForgotPassword">Forgot Password?</p> 
+                        </div>
+                        
                     </form>
                     
                     
