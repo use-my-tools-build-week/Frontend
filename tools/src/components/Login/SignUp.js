@@ -25,7 +25,9 @@ class SignUp extends React.Component {
 
     onSubmit = e => {
         e.preventDefault();
-        this.props.ActionSignUp(this.state);
+        this.props.ActionSignUp(this.state).then(() => {
+            this.props.history.push('/');
+        })
 
         this.setState({
             email:'',
