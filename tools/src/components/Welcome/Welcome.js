@@ -8,7 +8,7 @@ const Welcome = () => {
     return (
         <div className="Container">
             <nav class="topNav">
-                <img className="LogoSvg" src={WhiteLogo} />
+                <img className="LogoSvg" src={WhiteLogo} alt="Logo"/>
             </nav>
             <div className="ContentWrapper">
                 <p className="do-you-have-any-tool">Do you have any tools you want to lend out?</p>

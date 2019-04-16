@@ -27,7 +27,9 @@ class Login extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.ActionLogin(this.state)
+        this.props.ActionLogin(this.state).then(() => {
+            this.props.history.push('/welcome');
+        })
 
         this.setState({
             email: '',
@@ -43,7 +45,7 @@ class Login extends React.Component {
                 </div>
                 <div className="Login">
                     <form className="formContainer" onSubmit={this.onSubmit}>
-                        <img className="Logo" src={Logo} />
+                        <img className="Logo" src={Logo} alt="Logo"/>
                         <h2 className="loginBtn">Login</h2>
                     
                         <p className="email">Email</p>

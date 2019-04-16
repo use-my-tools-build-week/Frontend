@@ -20,6 +20,8 @@ const reducer = (state = initialState, action) => {
                 error: null,
                 fetching: false,
             }
+        default:
+            return state;
     }
 }
 

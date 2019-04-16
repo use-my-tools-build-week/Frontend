@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../App.css';
 import './Login.css';
-import {Link} from 'react-router-dom';
 import Logo from './Imgs/Logo.svg';
 import {connect} from 'react-redux';
 import {ActionSignUp} from '../../Actions/Actions';
@@ -43,7 +42,7 @@ class SignUp extends React.Component {
                 </div>
                 <div className="Login">
                 <form className="formContainer" onSubmit={this.onSubmit}>
-                        <img className="Logo" src={Logo} />
+                        <img className="Logo" src={Logo} alt="Logo"/>
                         <h2 className="sign-up">Sign Up</h2>
                         <p className="email">Email</p>
                         <input placeholder="Example@gmail.com" 

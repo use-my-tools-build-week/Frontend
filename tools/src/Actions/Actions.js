@@ -1,5 +1,5 @@
 
-import axios from 'axios';
+import AxiosAuth from '../AxiosAuth';
 
 export const FETCHING = 'FETCHING';
 export const SUCCESS = 'SUCCESS';
@@ -9,13 +9,13 @@ export function ActionLogin(logins) {
     console.log(logins)
     return dispatch => {
         dispatch({type: FETCHING});
-    return axios.post('https://umtbackend.herokuapp.com/api/login', logins)
+    return AxiosAuth().post('https://umtbackend.herokuapp.com/api/login', logins)
         .then(res => {
             console.log(res)
-            localStorage.setItem('Token', res.data.payload)
+            localStorage.setItem('Token', res.data.token)
             dispatch({
                 type: SUCCESS,
-                payload: res.data.payload
+                payload: res.data
             })
         })
         
@@ -30,13 +30,13 @@ export function ActionSignUp(signups) {
     console.log(signups)
     return dispatch => {
         dispatch({type: FETCHING});
-    return axios.post('https://umtbackend.herokuapp.com/api/register', signups)
+    return AxiosAuth().post('https://umtbackend.herokuapp.com/api/register', signups)
         .then(res => {
             console.log(res)
-            localStorage.setItem('Token', res.data.payload)
+            localStorage.setItem('Token', res.data.token)
             dispatch({
                 type: SUCCESS,
-                payload: res.data.payload
+                payload: res.data
             })
         })
         
