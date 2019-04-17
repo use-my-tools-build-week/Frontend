@@ -25,6 +25,7 @@
     width: 50%;	
     border: 1px solid #979797;	
     background-color: white;
+   
 }
 
 .sign-up {	
@@ -35,7 +36,7 @@
     font-size: 24px;	
     font-weight: bold;	
     line-height: 32px;
-    margin: 24px 0 24px 50px;
+    margin: 24px 0 24px 40px;
 }
 
 .loginBtn {	
@@ -46,7 +47,7 @@
     font-size: 24px;	
     font-weight: bold;	
     line-height: 32px;
-    margin: 24px 0 24px 50px;
+    margin: 24px 0 24px 40px;
 }
 
 .email {	
@@ -174,7 +175,13 @@ input {
     color: #00a0ff;
     cursor: pointer;
     margin-top: 24px;
-    margin-left: 50px;
+}
+
+.ForgotPassword2 {
+    color: #00a0ff;
+    cursor: pointer;
+    margin-top: 24px;
+    margin-left: 40px;
 }
 
 .bottom {

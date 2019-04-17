@@ -67,7 +67,7 @@ class SignUp extends React.Component {
                             <p className="checkbox-label">I accept the Terms and Conditions</p>
                         </div> */}
                         
-                        <p className="ForgotPassword">Forgot Password?</p>
+                        <p className="ForgotPassword2">Forgot Password?</p>
                     </form>
                 </div> 
             </div>

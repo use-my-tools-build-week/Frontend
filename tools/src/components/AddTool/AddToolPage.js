@@ -19,11 +19,6 @@ class AddToolPage extends React.Component {
         })
     }
 
-
-
-
-
-
     render(){
         return (
             <div className="Container">
