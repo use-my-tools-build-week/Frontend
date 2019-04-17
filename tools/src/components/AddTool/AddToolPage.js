@@ -82,7 +82,9 @@ class AddToolPage extends React.Component {
 
 const mapStateToProps = state => {
     return {
-      tools: state.tools
+      tools: state.tools,
+      categories: state.categories,
+      conditions: state.conditions
     }
   }
 

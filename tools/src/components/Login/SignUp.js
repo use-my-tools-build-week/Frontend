@@ -26,7 +26,7 @@ class SignUp extends React.Component {
     onSubmit = e => {
         e.preventDefault();
         this.props.ActionSignUp(this.state).then(() => {
-            this.props.history.push('/');
+            this.props.history.push('/additionalsignup');
         })
 
         this.setState({
@@ -51,12 +51,14 @@ class SignUp extends React.Component {
                         type="text" name="email"
                         onChange={this.handleChange}
                         value={this.state.email}
+                        className="input"
                         />
                         <p className="password">Password</p>
                         <input placeholder="*********" 
                         type="password" name="password"
                         onChange={this.handleChange}
                         value={this.state.password}
+                        className="input"
                         />
                         <div className="ButtonContainer">
                             

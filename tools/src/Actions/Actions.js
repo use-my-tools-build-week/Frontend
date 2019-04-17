@@ -1,6 +1,6 @@
 
 import AxiosAuth from '../AxiosAuth';
-import axios from 'axios';
+import Axios from 'axios';
 
 export const FETCHING = 'FETCHING';
 export const SUCCESS = 'SUCCESS';
@@ -12,6 +12,11 @@ export const ADD_TOOL_SUCCESS = 'ADD_TOOL_SUCCESS';
 export const ADD_TOOL_ERROR = 'ADD_TOOL_ERROR';
 export const DELETE_SUCCESS = 'DELETE_SUCCESS';
 export const DELETE_ERROR = 'DELETE_ERROR';
+export const TOOL_CATEGORIES = 'TOOL_CATEGORIES';
+export const TOOL_CATEGORIES_SUCCESS = 'TOOL_CATEGORIES_SUCCESS';
+export const TOOL_CATEGORIES_ERROR = 'TOOL_CATEGORIES_ERROR';
+export const UPDATE_USER_SUCCESS = 'UPDATE_USER_SUCCESS';
+
 
 export function ActionLogin(logins) {
     console.log(logins)
@@ -53,6 +58,19 @@ export function ActionSignUp(signups) {
         })
         
     }
+}
+
+export const updateUser = updateUser => dispatch => {
+    return AxiosAuth().put(`https://umtbackend.herokuapp.com/api/users/${updateUser.id}`, updateUser)
+    .then(res => {
+        dispatch({
+            type: UPDATE_USER_SUCCESS,
+            payload: res.data
+        })
+    })
+    .catch(err => {
+        console.log(err)
+    })
 }
 
 export const FetchTools = () => dispatch => {
@@ -108,6 +126,24 @@ export const FetchTools = () => dispatch => {
         })
       })
     }
+
+    export const ToolCategories = () => dispatch => {
+        dispatch({type: TOOL_CATEGORIES})
+        AxiosAuth().get('https://umtbackend.herokuapp.com/api/categories')
+        .then(res => {
+           return {
+                type: TOOL_CATEGORIES_SUCCESS,
+                payload: res.data
+            }
+        })
+        .catch(err => {
+           return {
+                type: TOOL_CATEGORIES_ERROR,
+                payload: err
+            }
+        })
+    }   
+
   
 
   
