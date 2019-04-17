@@ -31,11 +31,11 @@ export function ActionLogin(logins) {
                 payload: res.data
             })
         })
-        
+
         .catch(err => {
             console.log(err);
         })
-        
+
     }
 }
 
@@ -52,16 +52,16 @@ export function ActionSignUp(signups) {
                 payload: res.data
             })
         })
-        
+
         .catch(err => {
             console.log(err);
         })
-        
+
     }
 }
 
 export const updateUser = updateUser => dispatch => {
-    return AxiosAuth().put(`https://umtbackend.herokuapp.com/api/users/${updateUser.id}`, updateUser)
+    return AxiosAuth().put(`https://umtbackend.herokuapp.com/api/users/update_profile`, updateUser)
     .then(res => {
         dispatch({
             type: UPDATE_USER_SUCCESS,
@@ -105,7 +105,7 @@ export const FetchTools = () => dispatch => {
         dispatch({
             type: ADD_TOOL_ERROR,
             payload: err
-            
+
         })
     })
   }
@@ -142,8 +142,7 @@ export const FetchTools = () => dispatch => {
                 payload: err
             }
         })
-    }   
+    }
 
-  
 
-  
+
