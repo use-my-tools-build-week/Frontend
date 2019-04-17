@@ -53,12 +53,14 @@ class Login extends React.Component {
                         type="text" name="email" 
                         onChange={this.handleChange}
                         value={this.state.email}
+                        className="input"
                         />
                         <p className="password">Password</p>
                         <input placeholder="*********" 
                         type="password" name="password"
                         onChange={this.handleChange}
                         value={this.state.password}
+                        className="input"
                         />
                         <div className="ButtonContainer">
                             <button type="submit" className="button-1">Login</button>

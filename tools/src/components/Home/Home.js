@@ -66,11 +66,12 @@ const mapStateToProps = state => {
     return {
         tools: state.Tools,
         DataStart: state.DataStart,
-        error: state.error
+        error: state.error,
+        categories: state.categories
     }
 }
 
 export default connect(
     mapStateToProps,
-    { FetchTools, DeleteTool  }
+    { FetchTools, DeleteTool,  }
   )(Home);

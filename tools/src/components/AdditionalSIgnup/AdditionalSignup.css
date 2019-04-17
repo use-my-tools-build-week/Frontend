@@ -8,3 +8,113 @@
     height: 41.1px;	
     width: 183.61px;
 }
+
+.ASUHeader{	
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 20px;	
+    font-weight: bold;	
+    line-height: 28px;
+    text-align: center;
+    margin-top: 83px;
+}
+
+.formWrapper {
+    height: 400px;
+}
+
+.input1 {
+    height: 32px;	
+    width: 210px;	
+    border: 1px solid #00A0FF;	
+    border-radius: 4px;
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 14px;	
+    line-height: 20px;
+}
+.input2 {
+    height: 32px;	
+    width: 210px;	
+    border: 1px solid #00A0FF;	
+    border-radius: 4px;
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 14px;	
+    line-height: 20px;
+}
+.input3 {
+    height: 32px;	
+    width: 448px;	
+    border: 1px solid #00A0FF;	
+    border-radius: 4px;
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 14px;	
+    line-height: 20px;
+}
+.input4 {
+    height: 32px;	
+    width: 448px;	
+    border: 1px solid #00A0FF;	
+    border-radius: 4px;
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 14px;	
+    line-height: 20px;
+}
+.input5 {
+    height: 32px;	
+    width: 275px;	
+    border: 1px solid #00A0FF;	
+    border-radius: 4px;
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 14px;	
+    line-height: 20px;
+}
+.input6 {
+    height: 32px;	
+    width: 143px;	
+    border: 1px solid #00A0FF;	
+    border-radius: 4px;
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 14px;	
+    line-height: 20px;
+}
+
+.p11 {
+    margin-top: 16px;
+}
+
+.p22 {
+    margin-top: 12px;
+}
+
+.p33 {
+    margin-top: 15px;
+}
+
+.p44 {
+    margin-top: 15px;
+}
+
+.SUBtnContainer {
+    margin: 0 auto;
+    width: 89px;
+}
+
+.signupBtn {
+    height: 40px;	
+    width: 88px;
+    color: #FFFFFF;	
+    font-family: "Open Sans";	
+    font-size: 16px;	
+    font-weight: bold;	
+    line-height: 24px;	
+    text-align: center;
+    background: #617BC9;
+    border: none;
+    border-radius: 5px;
+}

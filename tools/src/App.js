@@ -35,7 +35,7 @@ class App extends Component {
         <Route path="/lawnandgarden" component={LawnAndGarden} />
         <Route path="/misc" component={Misc} />
         <Route path="/powertools" component={PowerTools} /> 
-        <AdditionalSignup />
+        <Route path="/additionalsignup" component={AdditionalSignup} />
       </div>
     );
   }
