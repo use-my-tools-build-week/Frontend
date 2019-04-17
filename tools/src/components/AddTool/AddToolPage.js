@@ -23,7 +23,8 @@ class AddToolPage extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.AddTools(this.state);
+        this.props.AddTools({name: this.state.toolName,
+        description: this.state.Description});
     }
 
     render(){
@@ -33,7 +34,7 @@ class AddToolPage extends React.Component {
                     <img src={WhiteLogo} className="Logo" alt="Logo" />
                     
                 </nav>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <div>
                     <p className="p1">Tool Name</p>
                         <input className="inputOne" 

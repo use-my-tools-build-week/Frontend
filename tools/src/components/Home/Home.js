@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {FetchTools} from '../../Actions/Actions';
+import {FetchTools, DeleteTool} from '../../Actions/Actions';
 import Nav from '../../Nav/Nav';
 import './Home.css'
 import {Link} from 'react-router-dom';
@@ -20,7 +20,11 @@ class Home extends React.Component {
                 <Nav />
                 {this.props.tools.map(t => {
                     return (
-                    <p>{t.name}</p>
+                        <div>
+                            <p onClick={() => this.props.DeleteTool(t.id)}>{t.name}</p>
+                            <p>{t.id}</p>  
+                        </div>
+                    
                     )
                 })}
                 <div className="CategoriesContainer">
@@ -68,5 +72,5 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    { FetchTools }
+    { FetchTools, DeleteTool  }
   )(Home);

@@ -57,15 +57,15 @@ export function ActionSignUp(signups) {
 
 export const FetchTools = () => dispatch => {
     dispatch({ type: GET_DATA_FETCH });
-    axios.get('https://umtbackend.herokuapp.com/api/tools')
+    AxiosAuth().get('https://umtbackend.herokuapp.com/api/tools')
       .then(res => {
           console.log(res)
         dispatch({
           type: GET_DATA_SUCCESS,
-          payload: res.data
+          payload: res.data.results
         });
       })
-      .catch(() => {
+      .catch((err) => {
         dispatch({
           type: GET_DATA_ERROR,
           payload: err
@@ -76,7 +76,7 @@ export const FetchTools = () => dispatch => {
   export const AddTools = tool => dispatch => {
       console.log(tool)
     dispatch({type: ADD_TOOL})
-    axios.post('https://umtbackend.herokuapp.com/api/tools', tool)
+    AxiosAuth().post('https://umtbackend.herokuapp.com/api/tools', tool)
     .then(res => {
         dispatch({
             type: ADD_TOOL_SUCCESS,
@@ -92,9 +92,9 @@ export const FetchTools = () => dispatch => {
     })
   }
 
-  export const deleteTool = id => dispatch => {
+  export const DeleteTool = id => dispatch => {
       dispatch({type: FETCHING})
-      axios.delete(`https://umtbackend.herokuapp.com/api/tools${id}`, id)
+      AxiosAuth().delete(`https://umtbackend.herokuapp.com/api/tools/${id}`, id)
       .then(res => {
         dispatch({
           type: DELETE_SUCCESS,
