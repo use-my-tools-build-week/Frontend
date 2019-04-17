@@ -3,6 +3,10 @@ import '../../App.css';
 import './Login.css';
 import {Link} from 'react-router-dom';
 import Logo from './Imgs/Logo.svg'
+import {connect} from 'react-redux';
+import {ActionLogin} from '../../Actions/Actions';
+import {withRouter} from 'react-router-dom';
+
 
 class Login extends React.Component {
     constructor(){
@@ -20,6 +24,19 @@ class Login extends React.Component {
         })
     }
 
+
+    onSubmit = (e) => {
+        e.preventDefault();
+        this.props.ActionLogin(this.state).then(() => {
+            this.props.history.push('/welcome');
+        })
+
+        this.setState({
+            email: '',
+            password: ''
+        })
+    }
+
     render() {
         return (
             <div className="LoginContainer">
@@ -27,8 +44,8 @@ class Login extends React.Component {
 
                 </div>
                 <div className="Login">
-                    <form className="formContainer">
-                        <img className="Logo" src={Logo} />
+                    <form className="formContainer" onSubmit={this.onSubmit}>
+                        <img className="Logo" src={Logo} alt="Logo"/>
                         <h2 className="loginBtn">Login</h2>
                     
                         <p className="email">Email</p>
@@ -44,11 +61,14 @@ class Login extends React.Component {
                         value={this.state.password}
                         />
                         <div className="ButtonContainer">
-                            <Link to="/welcome"><button className="button-1">Login</button></Link>
+                            <button type="submit" className="button-1">Login</button>
                             <Link to="/signup"><button className="button-2">Sign Up</button></Link>
                         </div>
-                        <p className="or">OR</p>
-                        <p className="ForgotPassword">Forgot Password?</p>
+                        <div className="bottom">
+                           <p className="or">OR</p>
+                           <p className="ForgotPassword">Forgot Password?</p> 
+                        </div>
+                        
                     </form>
                     
                     
@@ -59,4 +79,5 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+export default withRouter(
+     connect(null, {ActionLogin})(Login));

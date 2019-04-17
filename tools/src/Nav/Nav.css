@@ -1,0 +1,30 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;	
+    border: 1px solid #979797;	
+    height: 48px;		
+    background-color: #617BC9;
+}
+
+.NavItem {
+    height: 24px;	
+    width: 80px;	
+    color: white;
+    font-family: "Open Sans";	
+    font-size: 16px;	
+    font-weight: bold;	
+    line-height: 24px;
+    margin: 0 20px;
+    text-decoration: none;
+}
+
+ul {
+    margin-right: 22px;
+}
+
+.WLogo {
+    height: 41.1px;	
+    width: 183.61px;
+}

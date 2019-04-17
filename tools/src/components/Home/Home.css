@@ -1,0 +1,56 @@
+.CategoriesContainer{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.Categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.CategoryHeader {
+    height: 32px;	
+    width: 307px;	
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 24px;	
+    font-weight: bold;	
+    line-height: 32px;
+    margin-left: 55px;
+    margin-top: 80px;
+    margin-bottom: 32px;
+}
+
+.CategoryCard {	
+    height: 80px;	
+    width: 256px;	
+    border-radius: 4px;	
+    background-color: #FFFFFF;	
+    box-shadow: 0 0 2px 1px rgba(0,0,0,0.03), 0 6px 10px 2px rgba(0,0,0,0.08);
+    margin-bottom: 60px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.CardHead {
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 16px;	
+    font-weight: bold;	
+    line-height: 24px;
+    margin-top: 20px;
+}
+
+.CardSubTitle {
+    opacity: 0.5;	
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 12px;	
+    line-height: 16px;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
