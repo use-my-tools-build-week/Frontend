@@ -36,7 +36,7 @@ class Home extends React.Component {
             exact
             render={() => (
               <>
-                {this.props.tools &&
+                {/* {this.props.tools &&
                   this.props.tools.map(t => {
                     return (
                       <div>
@@ -46,7 +46,7 @@ class Home extends React.Component {
                         <p>{t.id}</p>
                       </div>
                     );
-                  })}
+                  })} */}
                 <div className="CategoriesContainer">
                   <h1 className="CategoryHeader">Browse Tools by Category</h1>
                   {this.props.categories &&
@@ -61,6 +61,20 @@ class Home extends React.Component {
                       </div>
                     ))}
                 </div>
+                {/* <div className="popularToolsContainer">
+                        <h1>Popular Tools Near You</h1>
+                        {this.props.Tools &&
+                          this.props.Tools.splice(0, 3).map(p => {
+                              console.log(p)
+                              return (
+                                  <div className="PopularContainer" key={p.id}>
+                                        <div className="popularCard">
+                                             <p>{p.name}</p>
+                                        </div>
+                                  </div>
+                                )
+                          })}
+                </div> */}
               </>
             )}
           />
@@ -72,9 +86,8 @@ class Home extends React.Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
-    tools: state.Tools,
+    tools: state.Reducer.Tools,
     DataStart: state.DataStart,
     error: state.error,
     categories: state.categories.categories,
