@@ -18,6 +18,11 @@ class Home extends React.Component {
             
             <div>
                 <Nav />
+                {this.props.tools.map(t => {
+                    return (
+                    <p>{t.name}</p>
+                    )
+                })}
                 <div className="CategoriesContainer">
                    <h1 className="CategoryHeader">Browse Tools by Category</h1>
                    <div className="Categories">

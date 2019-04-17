@@ -10,7 +10,8 @@ export const GET_DATA_ERROR = 'GET_DATA_ERROR';
 export const ADD_TOOL = 'ADD_TOOl';
 export const ADD_TOOL_SUCCESS = 'ADD_TOOL_SUCCESS';
 export const ADD_TOOL_ERROR = 'ADD_TOOL_ERROR';
-
+export const DELETE_SUCCESS = 'DELETE_SUCCESS';
+export const DELETE_ERROR = 'DELETE_ERROR';
 
 export function ActionLogin(logins) {
     console.log(logins)
@@ -67,14 +68,15 @@ export const FetchTools = () => dispatch => {
       .catch(() => {
         dispatch({
           type: GET_DATA_ERROR,
-          payload:'ERROR'
+          payload: err
         });
       });
   };
 
-  export const AddTools = () => dispatch => {
+  export const AddTools = tool => dispatch => {
+      console.log(tool)
     dispatch({type: ADD_TOOL})
-    axios.post('https://umtbackend.herokuapp.com/api/tools')
+    axios.post('https://umtbackend.herokuapp.com/api/tools', tool)
     .then(res => {
         dispatch({
             type: ADD_TOOL_SUCCESS,
@@ -84,7 +86,28 @@ export const FetchTools = () => dispatch => {
     .catch(err => {
         dispatch({
             type: ADD_TOOL_ERROR,
-            payload: 'ERROR ADDING TOOL'
+            payload: err
+            
         })
     })
   }
+
+  export const deleteTool = id => dispatch => {
+      dispatch({type: FETCHING})
+      axios.delete(`https://umtbackend.herokuapp.com/api/tools${id}`, id)
+      .then(res => {
+        dispatch({
+          type: DELETE_SUCCESS,
+          payload: res.data
+        })
+      })
+      .catch(err => {
+        dispatch({
+          type: DELETE_ERROR,
+          payload: err
+        })
+      })
+    }
+  
+
+  

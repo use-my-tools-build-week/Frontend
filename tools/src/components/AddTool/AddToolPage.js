@@ -2,6 +2,8 @@ import React from 'react';
 import '../../App.css'
 import './AddTool.css'
 import WhiteLogo from '../Login/Imgs/WhiteLogo.svg'
+import { connect } from 'react-redux';
+import {AddTools} from '../../Actions/Actions';
 
 
 class AddToolPage extends React.Component {
@@ -17,6 +19,11 @@ class AddToolPage extends React.Component {
         this.setState({
             [e.target.name]: e.target.value
         })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.AddTools(this.state);
     }
 
     render(){
@@ -72,4 +79,10 @@ class AddToolPage extends React.Component {
     }
 }
 
-export default AddToolPage;
+const mapStateToProps = state => {
+    return {
+      tools: state.tools
+    }
+  }
+
+export default connect(mapStateToProps, {AddTools})(AddToolPage);
