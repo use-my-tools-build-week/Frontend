@@ -2,6 +2,8 @@ import React from 'react';
 import '../../App.css'
 import './AddTool.css'
 import WhiteLogo from '../Login/Imgs/WhiteLogo.svg'
+import { connect } from 'react-redux';
+import {AddTools} from '../../Actions/Actions';
 
 
 class AddToolPage extends React.Component {
@@ -19,10 +21,11 @@ class AddToolPage extends React.Component {
         })
     }
 
-
-
-
-
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.AddTools({name: this.state.toolName,
+        description: this.state.Description});
+    }
 
     render(){
         return (
@@ -31,7 +34,7 @@ class AddToolPage extends React.Component {
                     <img src={WhiteLogo} className="Logo" alt="Logo" />
                     
                 </nav>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <div>
                     <p className="p1">Tool Name</p>
                         <input className="inputOne" 
@@ -77,4 +80,10 @@ class AddToolPage extends React.Component {
     }
 }
 
-export default AddToolPage;
+const mapStateToProps = state => {
+    return {
+      tools: state.tools
+    }
+  }
+
+export default connect(mapStateToProps, {AddTools})(AddToolPage);
