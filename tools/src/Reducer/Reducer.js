@@ -1,10 +1,13 @@
-import { FETCHING, SUCCESS, GET_DATA_ERROR, GET_DATA_SUCCESS, GET_DATA_FETCH } from "../Actions/Actions";
+import { FETCHING, SUCCESS, GET_DATA_ERROR, 
+    GET_DATA_SUCCESS, GET_DATA_FETCH, ADD_TOOL,
+     ADD_TOOL_ERROR,ADD_TOOL_SUCCESS} from "../Actions/Actions";
 
 const initialState = {
     Tools: [],
     fetching: false,
     error: null,
-    DataStart: false
+    DataStart: false,
+    addingTool: false
 }
 
 const reducer = (state = initialState, action) => {
@@ -41,6 +44,22 @@ const reducer = (state = initialState, action) => {
                 error: action.payload,
                 DataStart: false
             };
+        case ADD_TOOL:
+            return {
+                ...state,
+                addingTool: true,
+            }
+        case ADD_TOOL_SUCCESS:
+            return {
+                ...state,
+                Tools: action.payload,
+                addingTool: false
+            }
+        case ADD_TOOL_ERROR:
+            return {
+                ...state,
+                error: action.payload
+            }
         default:
             return state;
         }

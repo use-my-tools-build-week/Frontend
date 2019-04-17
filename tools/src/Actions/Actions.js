@@ -5,8 +5,11 @@ import axios from 'axios';
 export const FETCHING = 'FETCHING';
 export const SUCCESS = 'SUCCESS';
 export const GET_DATA_FETCH = 'GET_DATA_FETCH';
-export const GET_DATA_SUCCESS = 'GET_DATA_SUCCESS'
-export const GET_DATA_ERROR = 'GET_DATA_ERROR'
+export const GET_DATA_SUCCESS = 'GET_DATA_SUCCESS';
+export const GET_DATA_ERROR = 'GET_DATA_ERROR';
+export const ADD_TOOL = 'ADD_TOOl';
+export const ADD_TOOL_SUCCESS = 'ADD_TOOL_SUCCESS';
+export const ADD_TOOL_ERROR = 'ADD_TOOL_ERROR';
 
 
 export function ActionLogin(logins) {
@@ -68,3 +71,20 @@ export const FetchTools = () => dispatch => {
         });
       });
   };
+
+  export const AddTools = () => dispatch => {
+    dispatch({type: ADD_TOOL})
+    axios.post('https://umtbackend.herokuapp.com/api/tools')
+    .then(res => {
+        dispatch({
+            type: ADD_TOOL_SUCCESS,
+            payload: res.data
+        })
+    })
+    .catch(err => {
+        dispatch({
+            type: ADD_TOOL_ERROR,
+            payload: 'ERROR ADDING TOOL'
+        })
+    })
+  }
