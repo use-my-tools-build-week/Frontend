@@ -29,7 +29,7 @@ class Login extends React.Component {
         e.preventDefault();
         this.props.ActionLogin(this.state).then(() => {
             this.props.history.push('/welcome');
-        })
+        }).then()
 
         this.setState({
             email: '',
@@ -78,6 +78,8 @@ class Login extends React.Component {
         )
     }
 }
+
+
 
 export default withRouter(
      connect(null, {ActionLogin})(Login));

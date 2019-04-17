@@ -24,6 +24,8 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 error: null,
                 fetching: false,
+                categories: action.payload.categories,
+                conditions: action.payload.conditions
             }
         case GET_DATA_FETCH:
             return {

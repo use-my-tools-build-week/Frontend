@@ -30,7 +30,7 @@ class Home extends React.Component {
                 <div className="CategoriesContainer">
                    <h1 className="CategoryHeader">Browse Tools by Category</h1>
                    <div className="Categories">
-                        <Link to="/lawnandgarden"><div class="CategoryCard">
+                        <Link to="/lawnandgarden"><div className="CategoryCard">
                             <h2 className="CardHead" >Lawn and Garden</h2>
                             <h3 className="CardSubTitle" >Make that yard beautiful</h3>
                         </div> </Link>

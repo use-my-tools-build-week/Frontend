@@ -6,7 +6,7 @@ import WhiteLogo from '../components/Login/Imgs/WhiteLogo.svg';
 const Nav = () => {
   return (
     <nav>
-      <img className="WLogo" src={WhiteLogo} atl="Logo" />
+      <img className="WLogo" src={WhiteLogo} alt="Logo" />
       <ul>
         <a href="#" className="NavItem">My Tools</a>
         <a href="#" className="NavItem">Favorites</a>

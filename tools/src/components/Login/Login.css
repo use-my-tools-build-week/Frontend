@@ -164,6 +164,8 @@ input {
     background: #617ac7;
     margin-left: 40px;
     margin-top: 10px;
+    border: none;
+    border-radius: 5px;
 }
 
 .or {
