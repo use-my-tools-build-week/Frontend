@@ -2,6 +2,8 @@ import React from 'react';
 import WhiteLogo from '../Login/Imgs/WhiteLogo.svg';
 import './AdditionalSignup.css';
 import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
+import {updateUser} from '../../Actions/Actions';
 
 
 class AdditionalSignup extends React.Component {
@@ -26,6 +28,13 @@ class AdditionalSignup extends React.Component {
         })
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.updateUser(this.state)
+        const newObject = {}
+
+    }
+
 
 
     render() {
@@ -35,7 +44,7 @@ class AdditionalSignup extends React.Component {
                     <img className="LogoSvg" src={WhiteLogo} alt="Logo"/>
                 </nav>
                 <h3 className="ASUHeader">To Complete the sign up process, please fill out the following information</h3>
-                <form className="formWrapper">
+                <form className="formWrapper" >
                     <div >
                         <p>First Name</p>
                         <input className="input1" 
@@ -87,7 +96,7 @@ class AdditionalSignup extends React.Component {
                     
                 </form>
                 <div className="SUBtnContainer">
-                    <Link to="/welcome"><button className="signupBtn">Done</button></Link>
+                    <Link to="/welcome"><button onSubmit={this.handleSubmit} className="signupBtn">Done</button></Link>
                 </div>
                 
             </div>
@@ -95,4 +104,4 @@ class AdditionalSignup extends React.Component {
     }
 }
 
-export default AdditionalSignup;
+export default connect(null, {updateUser}) (AdditionalSignup);

@@ -1,5 +1,6 @@
 
 import AxiosAuth from '../AxiosAuth';
+import Axios from 'axios';
 
 export const FETCHING = 'FETCHING';
 export const SUCCESS = 'SUCCESS';
@@ -14,6 +15,7 @@ export const DELETE_ERROR = 'DELETE_ERROR';
 export const TOOL_CATEGORIES = 'TOOL_CATEGORIES';
 export const TOOL_CATEGORIES_SUCCESS = 'TOOL_CATEGORIES_SUCCESS';
 export const TOOL_CATEGORIES_ERROR = 'TOOL_CATEGORIES_ERROR';
+export const UPDATE_USER_SUCCESS = 'UPDATE_USER_SUCCESS';
 
 
 export function ActionLogin(logins) {
@@ -56,6 +58,19 @@ export function ActionSignUp(signups) {
         })
         
     }
+}
+
+export const updateUser = updateUser => dispatch => {
+    return AxiosAuth().put(`https://umtbackend.herokuapp.com/api/users/${updateUser.id}`, updateUser)
+    .then(res => {
+        dispatch({
+            type: UPDATE_USER_SUCCESS,
+            payload: res.data
+        })
+    })
+    .catch(err => {
+        console.log(err)
+    })
 }
 
 export const FetchTools = () => dispatch => {
@@ -128,6 +143,7 @@ export const FetchTools = () => dispatch => {
             }
         })
     }   
+
   
 
   

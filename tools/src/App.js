@@ -13,7 +13,7 @@ import HandTools from './components/CategoryPages/HandTools'
 import LawnAndGarden from './components/CategoryPages/LawnAndGarden';
 import Misc from './components/CategoryPages/Misc';
 import PowerTools from './components/CategoryPages/PowerTools';
-import AdditionalSignup from './components/AdditionalSIgnup/AdditionalSignup';
+import AdditionalSignup from './components/AdditionalSignup/AdditionalSignup';
 
 
 
