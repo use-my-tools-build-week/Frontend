@@ -1,18 +1,18 @@
-import { ERROR, FETCH_CONDITIONS, FETCH_CONDITIONS_SUCCESS } from '../Actions';
+import { ERROR, FETCH_CATEGORY, FETCH_CATEGORY_SUCCESS } from '../Actions';
 
 const initialState = {
-  conditions: [],
-  fetching: false
+  category: null,
+  fetching: false,
 };
 
-export const conditionsReducer = (state = initialState, action) => {
+export const categoryReducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCH_CONDITIONS:
+    case FETCH_CATEGORY:
       return { ...state, fetching: true };
-    case FETCH_CONDITIONS_SUCCESS:
+    case FETCH_CATEGORY_SUCCESS:
       return {
         ...state,
-        conditions: action.payload,
+        category: action.payload,
         fetching: false
       };
     case ERROR:
@@ -24,3 +24,5 @@ export const conditionsReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+

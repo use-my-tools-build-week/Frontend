@@ -39,7 +39,7 @@ class Home extends React.Component {
                 {this.props.tools &&
                   this.props.tools.map(t => {
                     return (
-                      <div>
+                      <div key={t.id}>
                         <p onClick={() => this.props.DeleteTool(t.id)}>
                           {t.name}
                         </p>
@@ -53,7 +53,7 @@ class Home extends React.Component {
                     this.props.categories.map(c => (
                       <div className="Categories" key={c.id}>
                         <Link to={`/home/categories/${c.id}`}>
-                          <div class="CategoryCard">
+                          <div className="CategoryCard">
                             <h2 className="CardHead">{c.name}</h2>
                             <h3 className="CardSubTitle">{c.blurb}</h3>
                           </div>{' '}
@@ -74,7 +74,7 @@ class Home extends React.Component {
 const mapStateToProps = state => {
   console.log(state);
   return {
-    tools: state.Tools,
+    tools: state.Reducer.Tools,
     DataStart: state.DataStart,
     error: state.error,
     categories: state.categories.categories,
