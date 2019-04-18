@@ -115,7 +115,7 @@ export const FetchTools = () => dispatch => {
 
   export const DeleteTool = id => dispatch => {
       dispatch({type: FETCHING})
-      AxiosAuth().delete(`https://umtbackend.herokuapp.com/api/tools/${id}`, id)
+      return AxiosAuth().delete(`https://umtbackend.herokuapp.com/api/tools/${id}`, id)
       .then(res => {
         dispatch({
           type: DELETE_SUCCESS,

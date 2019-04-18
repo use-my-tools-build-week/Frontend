@@ -7,12 +7,7 @@ import MyTool from '../Tool/MyTool';
 
 
 class MyTools extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            mytools: ''
-        }
-    }
+   
 
     componentDidMount() {
         this.props.GetMyTools();
@@ -25,12 +20,12 @@ class MyTools extends React.Component {
                 <Nav />
                 <div className="mytoolheadercontainer">
                     <h3 className="mytoolHeader">My Tools</h3>
-                    <button className="mytoolbutton">+ Add New Tool</button>  
+                    <a href="/addtool"><button className="mytoolbutton">+ Add New Tool</button></a>  
                 </div>
                 
                 <div className="mytoolwrapper">
                     {this.props.mytools.map(tool => {
-                       return <MyTool tool={tool} />  
+                       return <MyTool key={tool.id} tool={tool} />  
                     })}
                     
                 </div>
