@@ -15,6 +15,14 @@ class Home extends React.Component {
   componentDidMount() {
     this.props.FetchTools();
     // fetch categories and conditions if not already in state
+    const { categories, conditions } = this.props;
+    if (categories.length === 0) {
+      this.props.FetchCategories();
+    }
+
+    if (conditions.length === 0) {
+      this.props.FetchConditions();
+    }
   }
 
   render() {

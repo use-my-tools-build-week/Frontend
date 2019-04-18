@@ -2,6 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { FetchCategory } from '../../Actions';
 import Tool from '../Tool/Tool';
+import Nav from '../../Nav/Nav';
+import ToolModal from '../Tool/ToolModal';
 
 import './Category.css';
 
