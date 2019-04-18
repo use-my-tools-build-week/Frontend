@@ -14,7 +14,7 @@ import LawnAndGarden from './components/CategoryPages/LawnAndGarden';
 import Misc from './components/CategoryPages/Misc';
 import PowerTools from './components/CategoryPages/PowerTools';
 import AdditionalSignup from './components/AdditionalSignup/AdditionalSignup';
-
+import MyTools from './components/MyTools/MyTools';
 
 
 class App extends Component {
@@ -36,6 +36,7 @@ class App extends Component {
         <Route path="/misc" component={Misc} />
         <Route path="/powertools" component={PowerTools} /> 
         <Route path="/additionalsignup" component={AdditionalSignup} />
+        <Route path="/mytools" component={MyTools} />
       </div>
     );
   }
