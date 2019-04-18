@@ -26,7 +26,7 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    console.log(this.props.tools);
     return (
       <div>
         <Nav />
@@ -61,20 +61,17 @@ class Home extends React.Component {
                       </div>
                     ))}
                 </div>
-                {/* <div className="popularToolsContainer">
-                        <h1>Popular Tools Near You</h1>
-                        {this.props.Tools &&
-                          this.props.Tools.splice(0, 3).map(p => {
-                              console.log(p)
-                              return (
-                                  <div className="PopularContainer" key={p.id}>
-                                        <div className="popularCard">
-                                             <p>{p.name}</p>
-                                        </div>
-                                  </div>
-                                )
-                          })}
-                </div> */}
+                <div className="PopularContainer">
+                  <h1 className="PopularHeader">Browse Tools by Category</h1>
+                  {this.props.tools &&
+                    this.props.tools.splice(0,3).map(t => (
+                      <div className="Categories" key={t.id}>
+                          <div class="CategoryCard">
+                            <h2 className="CardHead">{t.name}</h2>
+                          </div>{' '}
+                      </div>
+                    ))}
+                </div>
               </>
             )}
           />
