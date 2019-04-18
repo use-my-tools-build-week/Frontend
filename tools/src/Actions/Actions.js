@@ -19,7 +19,8 @@ export const TOOL_CATEGORIES_ERROR = 'TOOL_CATEGORIES_ERROR';
 export const UPDATE_USER_SUCCESS = 'UPDATE_USER_SUCCESS';
 export const GET_MY_TOOLS = 'GET_MY_TOOLS';
 export const GET_MY_TOOLS_SUCCESS = 'GET_MY_TOOLS_SUCCESS';
-
+export const UPDATE_TOOL = 'UPDATE_TOOL';
+export const UPDATE_TOOL_SUCCESS = 'UPDATE_TOOL_SUCCESS';
 
 export function ActionLogin(logins) {
     console.log(logins)
@@ -110,6 +111,23 @@ export const FetchTools = () => dispatch => {
             payload: err
 
         })
+    })
+  }
+
+  export const UpdateTool = id => dispatch => {
+    dispatch({type: UPDATE_TOOL})
+    return AxiosAuth().put(`https://umtbackend.herokuapp.com/api/tools/${id}`, id)
+    .then(res => {
+      dispatch({
+        type: UPDATE_TOOL_SUCCESS,
+        payload: res.data
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: ERROR,
+        payload: err
+      })
     })
   }
 
