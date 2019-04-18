@@ -10,7 +10,9 @@ const initialState = {
     fetching: false,
     error: null,
     DataStart: false,
-    addingTool: false
+    addingTool: false,
+    fetchMyTools: false,
+    Mytools: []
 }
 
 const updateTool = (state, action) => {
@@ -90,10 +92,18 @@ const reducer = (state = initialState, action) => {
         return {
                 ...state,
                 error: action.payload
-        }
-        // case UPDATE_USER_SUCCESS:
-        //     return {
-        //         ...state,
+            }
+        case GET_MY_TOOLS:
+            return {
+                ...state,
+                fetchMyTools: true
+            }
+        case GET_MY_TOOLS_SUCCESS:
+            return {
+                ...state,
+                fetchMyTools: false,
+                Mytools: action.payload
+            }
 
         //     }
         case FETCH_TOOL_SUCCESS:

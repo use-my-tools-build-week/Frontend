@@ -26,7 +26,7 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    console.log(this.props.tools);
     return (
       <div>
         <Nav />
@@ -47,8 +47,8 @@ class Home extends React.Component {
                       </div>
                     );
                   })} */}
+                <h1 className="CategoryHeader">Browse Tools by Category</h1>
                 <div className="CategoriesContainer">
-                  <h1 className="CategoryHeader">Browse Tools by Category</h1>
                   {this.props.categories &&
                     this.props.categories.map(c => (
                       <div className="Categories" key={c.id}>
@@ -61,20 +61,20 @@ class Home extends React.Component {
                       </div>
                     ))}
                 </div>
-                {/* <div className="popularToolsContainer">
-                        <h1>Popular Tools Near You</h1>
-                        {this.props.Tools &&
-                          this.props.Tools.splice(0, 3).map(p => {
-                              console.log(p)
-                              return (
-                                  <div className="PopularContainer" key={p.id}>
-                                        <div className="popularCard">
-                                             <p>{p.name}</p>
-                                        </div>
-                                  </div>
-                                )
-                          })}
-                </div> */}
+                <h1 className="PopularHeader">Popular Tools Near You</h1>
+                <div className="PopularContainer">
+                  {this.props.tools &&
+                    this.props.tools.splice(2,3).map(t => (
+                      <div className="Popular" key={t.id}>
+                          <div class="PopularCard">
+                            <img className="toolImg" src={t.img_url} alt="toolImg" />
+                            <img className="userImg" src={t.loaner_img_url} alt="loanerImg"/>
+                            <h2 className="PopularCardHead">{t.name}</h2>
+                            <h4 className="names"><span className="owner">Owner: </span>{t.firstname} {t.lastname}</h4>
+                          </div>{' '}
+                      </div>
+                    ))}
+                </div>
               </>
             )}
           />

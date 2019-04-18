@@ -1,6 +1,7 @@
 
 import AxiosAuth from '../AxiosAuth';
 import Axios from 'axios';
+import { ERROR } from '.';
 
 export const FETCHING = 'FETCHING';
 export const SUCCESS = 'SUCCESS';
@@ -16,6 +17,8 @@ export const TOOL_CATEGORIES = 'TOOL_CATEGORIES';
 export const TOOL_CATEGORIES_SUCCESS = 'TOOL_CATEGORIES_SUCCESS';
 export const TOOL_CATEGORIES_ERROR = 'TOOL_CATEGORIES_ERROR';
 export const UPDATE_USER_SUCCESS = 'UPDATE_USER_SUCCESS';
+export const GET_MY_TOOLS = 'GET_MY_TOOLS';
+export const GET_MY_TOOLS_SUCCESS = 'GET_MY_TOOLS_SUCCESS';
 
 
 export function ActionLogin(logins) {
@@ -139,6 +142,23 @@ export const FetchTools = () => dispatch => {
         .catch(err => {
            return {
                 type: TOOL_CATEGORIES_ERROR,
+                payload: err
+            }
+        })
+    }
+
+    export const GetMyTools = () => dispatch => {
+        dispatch({type: GET_MY_TOOLS})
+        AxiosAuth().get('https://umtbackend.herokuapp.com/api/tools/my_tools')
+        .then(res => {
+           return {
+                type: GET_MY_TOOLS_SUCCESS,
+                payload: res.data
+            }
+        })
+        .catch(err => {
+           return {
+                type: ERROR,
                 payload: err
             }
         })
