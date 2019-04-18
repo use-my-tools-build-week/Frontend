@@ -10,7 +10,7 @@ const initialState = {
     DataStart: false,
     addingTool: false,
     fetchMyTools: false,
-    Mytools: ''
+    Mytools: []
 }
 
 const reducer = (state = initialState, action) => {

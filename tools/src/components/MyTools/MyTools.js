@@ -1,6 +1,8 @@
 import React from 'react';
 import './MyTools.css';
 import Nav from '../../Nav/Nav';
+import {connect} from 'react-redux';
+import {GetMyTools} from '../../Actions/Actions';
 
 
 class MyTools extends React.Component {
@@ -12,7 +14,7 @@ class MyTools extends React.Component {
     }
 
     componentDidMount() {
-        
+        this.props.GetMyTools();
     }
 
     render() {
@@ -29,4 +31,11 @@ class MyTools extends React.Component {
     }
 }
 
-export default MyTools;
+const MapStateToProps = state => {
+    console.log(state)
+    return {
+       mytools: state.Mytools 
+    }
+}
+
+export default connect(MapStateToProps, {GetMyTools})(MyTools);
