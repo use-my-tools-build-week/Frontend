@@ -94,7 +94,7 @@ export const FetchTools = () => dispatch => {
   export const AddTools = tool => dispatch => {
       console.log(tool)
     dispatch({type: ADD_TOOL})
-    AxiosAuth().post('https://umtbackend.herokuapp.com/api/tools', tool)
+    return AxiosAuth().post('https://umtbackend.herokuapp.com/api/tools', tool)
     .then(res => {
         dispatch({
             type: ADD_TOOL_SUCCESS,
