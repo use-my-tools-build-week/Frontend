@@ -75,7 +75,7 @@ const reducer = (state = initialState, action) => {
         case ADD_TOOL_SUCCESS:
             return {
                 ...state,
-                Tools: action.payload,
+                Mytools: action.payload,
                 addingTool: false
             }
         case ADD_TOOL_ERROR:

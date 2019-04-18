@@ -10,6 +10,7 @@ import Nav from '../../Nav/Nav';
 import './Home.css';
 import { Link, Switch, Route } from 'react-router-dom';
 import Category from '../CategoryPages/Category';
+import Tool from '../Tool/Tool';
 
 class Home extends React.Component {
   componentDidMount() {
@@ -65,14 +66,7 @@ class Home extends React.Component {
                 <div className="PopularContainer">
                   {this.props.tools &&
                     this.props.tools.splice(2,3).map(t => (
-                      <div className="Popular" key={t.id}>
-                          <div class="PopularCard">
-                            <img className="toolImg" src={t.img_url} alt="toolImg" />
-                            <img className="userImg" src={t.loaner_img_url} alt="loanerImg"/>
-                            <h2 className="PopularCardHead">{t.name}</h2>
-                            <h4 className="names"><span className="owner">Owner: </span>{t.firstname} {t.lastname}</h4>
-                          </div>{' '}
-                      </div>
+                      <Tool tool={t} key={t.id}/>
                     ))}
                 </div>
               </>

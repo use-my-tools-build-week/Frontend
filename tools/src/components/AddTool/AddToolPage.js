@@ -40,7 +40,7 @@ class AddToolPage extends React.Component {
         category_id: this.state.ToolCategory,
         condition_id: this.state.Condition
       })
-      .then(() => this.props.history.push('/welcome'));
+      .then(() => this.props.history.push('/mytools'));
   };
 
   render() {

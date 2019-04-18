@@ -152,16 +152,16 @@ export const FetchTools = () => dispatch => {
         AxiosAuth().get('https://umtbackend.herokuapp.com/api/tools/my_tools')
         .then(res => {
             console.log(res)
-           return {
+           dispatch ({
                 type: GET_MY_TOOLS_SUCCESS,
                 payload: res.data.results
-            }
+            })
         })
         .catch(err => {
-           return {
+            dispatch ({
                 type: ERROR,
                 payload: err
-            }
+            })
         })
     }
 

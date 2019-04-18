@@ -3,6 +3,7 @@ import './MyTools.css';
 import Nav from '../../Nav/Nav';
 import {connect} from 'react-redux';
 import {GetMyTools} from '../../Actions/Actions';
+import MyTool from '../Tool/MyTool';
 
 
 class MyTools extends React.Component {
@@ -20,11 +21,18 @@ class MyTools extends React.Component {
     render() {
         console.log(this.props)
         return (
-            <div>
+            <div >
                 <Nav />
-                <div>
-                    <h2>My Tools</h2>
-                    <button>+ Add New Tool</button>  
+                <div className="mytoolheadercontainer">
+                    <h3 className="mytoolHeader">My Tools</h3>
+                    <button className="mytoolbutton">+ Add New Tool</button>  
+                </div>
+                
+                <div className="mytoolwrapper">
+                    {this.props.mytools.map(tool => {
+                       return <MyTool tool={tool} />  
+                    })}
+                    
                 </div>
                 
             </div>
