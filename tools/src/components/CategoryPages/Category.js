@@ -27,10 +27,14 @@ class Category extends React.Component {
     return (
       <div>
         <h1>{category.name}</h1>
-        { tools.map(t => (
-          <Tool tool={t} key={t.id} />
-        ))}
+        <div class="catWrapper">
+        
+          { tools.map(t => (
+            <Tool tool={t} key={t.id} />
+         ))}
+        </div>
       </div>
+      
     );
   }
 }
