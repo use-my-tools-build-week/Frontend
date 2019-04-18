@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 import ToolModal from './ToolModal';
 import { CardAvatar } from '../Common/Avatar';
+import { fetchTool, fetchToolSuccess, favoriteTool } from '../../Actions';
 
 const ToolWrapper = styled.div`
   height: 240px;
@@ -24,12 +26,19 @@ const ToolImg = styled.img`
   width: 240px;
 `;
 
-export default ({ tool }) => {
+export default connect(
+  null,
+  { fetchToolSuccess, favoriteTool }
+)(({ tool, favoriteTool }) => {
   const [modalShowing, setModalShowing] = useState(false);
   return (
     <ToolWrapper>
       {modalShowing && (
-        <ToolModal tool={tool} onClose={() => setModalShowing(false)} />
+        <ToolModal
+          tool={tool}
+          onClose={() => setModalShowing(false)}
+          onFavorite={() => favoriteTool(tool.id)}
+        />
       )}
 
       <ToolImg src={tool.img_url} />
@@ -38,4 +47,4 @@ export default ({ tool }) => {
       <div>Owner: {`${tool.firstname} ${tool.lastname[0]}.`}</div>
     </ToolWrapper>
   );
-};
+});

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import AxiosAuth from '../../AxiosAuth';
 import Avatar from '../Common/Avatar';
 
-
 const ModalWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -41,7 +40,7 @@ const Modal = styled.div`
 const ToolDescription = styled.div``;
 
 const ToolModal = props => {
-  const { onClose, tool } = props;
+  const { onClose, tool, onFavorite } = props;
 
   return (
     <ModalWrapper>
@@ -55,11 +54,19 @@ const ToolModal = props => {
         <Avatar src={tool.loaner_img_url} />
         <div>Name: {tool.name}</div>
         <div>Distance: {tool.distance} miles away</div>
-        <div>Owner: { `${tool.firstname} ${tool.lastname[0]}.` }</div>
-        <div>Condition: { tool.condition_name }</div>
-        { tool.is_requested ? <button>Unrequest</button> : <button>Request</button>}
+        <div>Owner: {`${tool.firstname} ${tool.lastname[0]}.`}</div>
+        <div>Condition: {tool.condition_name}</div>
+        {tool.is_requested ? (
+          <button>Unrequest</button>
+        ) : (
+          <button>Request</button>
+        )}
         <div>Category: {tool.category_name}</div>
-        { tool.is_favorited ? <button>Unfavorite</button> : <button>Favorite</button>}
+        {tool.is_favorited ? (
+          <button>Unfavorite</button>
+        ) : (
+          <button onClick={onFavorite}>Favorite</button>
+        )}
         <ToolDescription>Description: {tool.description}</ToolDescription>
       </Modal>
     </ModalWrapper>
