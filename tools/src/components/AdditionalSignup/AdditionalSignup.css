@@ -21,6 +21,9 @@
 
 .formWrapper {
     height: 400px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .input1 {
@@ -117,4 +120,5 @@
     background: #617BC9;
     border: none;
     border-radius: 5px;
+    margin-top: 44px;
 }
