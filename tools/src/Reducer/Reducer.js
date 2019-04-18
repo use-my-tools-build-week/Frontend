@@ -1,8 +1,8 @@
 import { FETCHING, SUCCESS, GET_DATA_ERROR,
  GET_DATA_SUCCESS, GET_DATA_FETCH, ADD_TOOL,
  ADD_TOOL_ERROR,ADD_TOOL_SUCCESS, DELETE_ERROR,
-  DELETE_SUCCESS,
-  FETCH_TOOL_SUCCESS, GET_MY_TOOLS, GET_MY_TOOLS_SUCCESS
+  DELETE_SUCCESS,FETCH_TOOL_SUCCESS, GET_MY_TOOLS, 
+  GET_MY_TOOLS_SUCCESS, UPDATE_TOOL, UPDATE_TOOL_SUCCESS
 } from "../Actions";
 
 const initialState = {
@@ -12,6 +12,7 @@ const initialState = {
     DataStart: false,
     addingTool: false,
     fetchMyTools: false,
+    updatingTool: false,
     Mytools: []
 }
 
@@ -81,6 +82,16 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 error: action.payload
+            }
+        case UPDATE_TOOL:
+            return {
+                ...state,
+                updatingTool: true
+            }
+        case UPDATE_TOOL_SUCCESS:
+            return {
+                ...state,
+                updatingTool: false
             }
         case DELETE_SUCCESS:
             return {

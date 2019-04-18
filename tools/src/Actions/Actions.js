@@ -114,9 +114,10 @@ export const FetchTools = () => dispatch => {
     })
   }
 
-  export const UpdateTool = id => dispatch => {
+  export const UpdateTool = tool => dispatch => {
+      console.log(tool)
     dispatch({type: UPDATE_TOOL})
-    return AxiosAuth().put(`https://umtbackend.herokuapp.com/api/tools/${id}`, id)
+    return AxiosAuth().put(`https://umtbackend.herokuapp.com/api/tools/${tool.id}`, tool)
     .then(res => {
       dispatch({
         type: UPDATE_TOOL_SUCCESS,

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import ToolModal from './ToolModal';
 import { CardAvatar } from '../Common/Avatar';
 import { fetchTool, fetchToolSuccess, favoriteTool } from '../../Actions';
-import {DeleteTool, GetMyTools} from '../../Actions/Actions';
+import {DeleteTool, GetMyTools, UpdateTool} from '../../Actions/Actions';
 
 
 const ToolWrapper = styled.div`
@@ -74,8 +74,8 @@ const Toolname = styled.div`
 
 export default connect(
   null,
-  { fetchToolSuccess, favoriteTool, DeleteTool, GetMyTools }
-)(({ tool, favoriteTool, DeleteTool, GetMyTools }) => {
+  { fetchToolSuccess, favoriteTool, DeleteTool, GetMyTools, UpdateTool }
+)(({ tool, favoriteTool, DeleteTool, GetMyTools, UpdateTool }) => {
   const [modalShowing, setModalShowing] = useState(false);
  
   return (
@@ -91,7 +91,7 @@ export default connect(
       <CardAvatar src={tool.loaner_img_url} />
       <Toolname onClick={() => setModalShowing(true)}>{tool.name}</Toolname>
       <div>
-          <MyButton1>Modify</MyButton1>
+          <a href={`/updatetool/${tool.id}`}><MyButton1>Modify</MyButton1></a>
           <MyButton2 onClick={() => DeleteTool(tool.id).then(GetMyTools)}>Delete</MyButton2>
       </div>
     </ToolWrapper>

@@ -1,0 +1,103 @@
+nav {
+    height: 48px;	
+    width: 100%;	
+    background-color: #617BC9;
+}
+
+form {
+    height: 738px;	
+    width: 512px;		
+    border-radius: 4px;	
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    align-content: center;
+}
+
+.Logo {
+    margin: 0;
+    height: 41.1px;	
+    width: 183.61px;
+}
+
+.toolName {
+    height: 32px;	
+    width: 452px;	
+    border: 2px solid #00A0FF;
+    opacity: 1;	
+    border-radius: 4px;	
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 14px;	
+    line-height: 20px;
+    margin: 0;
+}
+
+.Category {
+    border: 2px solid #00A0FF;	
+    border-radius: 4px;
+    height: 32px;	
+    width: 224px;	
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 14px;	
+    line-height: 20px;
+    background: white;
+}
+
+.Condition {
+    height: 32px;	
+    width: 199px;	
+    border: 2px solid #00A0FF;	
+    border-radius: 4px;	
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 14px;	
+    line-height: 20px;
+    background: white;
+}
+
+.Desc {
+    height: 92px;	
+    width: 452px;	
+    border: 2px solid #00A0FF;	
+    border-radius: 4px;	
+    color: #000000;	
+    font-family: "Open Sans";	
+    font-size: 14px;	
+    line-height: 20px;
+}
+
+ p{
+    height: 16px;	
+    width: 146.09px;		
+    color: #00A0FF;	
+    font-family: "Open Sans";	
+    font-size: 12px;	
+    line-height: 16px
+ }
+
+ .p2 {
+     margin-top: 42px;
+ }
+ .p3 {
+    margin-top: 42px;
+}
+ .p4 {
+     margin-top: 34px;
+ }
+
+ .DoneBtn {
+    height: 40px;	
+    width: 88px;
+    color: #FFFFFF;	
+    font-family: "Open Sans";	
+    font-size: 16px;	
+    font-weight: bold;	
+    line-height: 24px;	
+    text-align: center;
+    background-color: #617BC9;
+    border: none;
+    border-radius: 5px;
+ }
