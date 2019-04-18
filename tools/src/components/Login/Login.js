@@ -29,7 +29,7 @@ class Login extends React.Component {
         e.preventDefault();
         this.props.ActionLogin(this.state).then(() => {
             this.props.history.push('/welcome');
-        })
+        }).then()
 
         this.setState({
             email: '',
@@ -53,12 +53,14 @@ class Login extends React.Component {
                         type="text" name="email" 
                         onChange={this.handleChange}
                         value={this.state.email}
+                        className="input"
                         />
                         <p className="password">Password</p>
                         <input placeholder="*********" 
                         type="password" name="password"
                         onChange={this.handleChange}
                         value={this.state.password}
+                        className="input"
                         />
                         <div className="ButtonContainer">
                             <button type="submit" className="button-1">Login</button>
@@ -78,6 +80,8 @@ class Login extends React.Component {
         )
     }
 }
+
+
 
 export default withRouter(
      connect(null, {ActionLogin})(Login));

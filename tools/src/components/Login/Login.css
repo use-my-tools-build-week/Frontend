@@ -71,7 +71,7 @@
     margin-left: 45px;
 }
 
-input {	
+.input {	
     height: 32px;	
     width: 328px;	
     opacity: 0.25;	
@@ -164,6 +164,8 @@ input {
     background: #617ac7;
     margin-left: 40px;
     margin-top: 10px;
+    border: none;
+    border-radius: 5px;
 }
 
 .or {

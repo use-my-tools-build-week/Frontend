@@ -13,6 +13,7 @@ import HandTools from './components/CategoryPages/HandTools'
 import LawnAndGarden from './components/CategoryPages/LawnAndGarden';
 import Misc from './components/CategoryPages/Misc';
 import PowerTools from './components/CategoryPages/PowerTools';
+import AdditionalSignup from './components/AdditionalSignup/AdditionalSignup';
 
 
 
@@ -33,7 +34,8 @@ class App extends Component {
         <Route path="/handtools" component={HandTools} />
         <Route path="/lawnandgarden" component={LawnAndGarden} />
         <Route path="/misc" component={Misc} />
-        <Route path="/powertools" component={PowerTools} />
+        <Route path="/powertools" component={PowerTools} /> 
+        <Route path="/additionalsignup" component={AdditionalSignup} />
       </div>
     );
   }

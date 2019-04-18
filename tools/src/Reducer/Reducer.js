@@ -1,7 +1,7 @@
 import { FETCHING, SUCCESS, GET_DATA_ERROR,
  GET_DATA_SUCCESS, GET_DATA_FETCH, ADD_TOOL,
  ADD_TOOL_ERROR,ADD_TOOL_SUCCESS, DELETE_ERROR,
-  DELETE_SUCCESS} from "../Actions/Actions";
+  DELETE_SUCCESS, UPDATE_USER_SUCCESS} from "../Actions/Actions";
 
 const initialState = {
     Tools: [],
@@ -24,6 +24,8 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 error: null,
                 fetching: false,
+                categories: action.payload.categories,
+                conditions: action.payload.conditions
             }
         case GET_DATA_FETCH:
             return {
@@ -70,6 +72,11 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 error: action.payload
         }
+        // case UPDATE_USER_SUCCESS:
+        //     return {
+        //         ...state,
+                
+        //     }
         default:
             return state;
         }
