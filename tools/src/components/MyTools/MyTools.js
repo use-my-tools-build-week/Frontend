@@ -18,6 +18,7 @@ class MyTools extends React.Component {
     }
 
     render() {
+        console.log(this.props)
         return (
             <div>
                 <Nav />
@@ -34,7 +35,7 @@ class MyTools extends React.Component {
 const MapStateToProps = state => {
     console.log(state)
     return {
-       mytools: state.Mytools 
+       mytools: state.Reducer.Mytools 
     }
 }
 
