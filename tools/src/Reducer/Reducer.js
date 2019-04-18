@@ -1,14 +1,16 @@
 import { FETCHING, SUCCESS, GET_DATA_ERROR,
  GET_DATA_SUCCESS, GET_DATA_FETCH, ADD_TOOL,
  ADD_TOOL_ERROR,ADD_TOOL_SUCCESS, DELETE_ERROR,
-  DELETE_SUCCESS, UPDATE_USER_SUCCESS} from "../Actions/Actions";
+  DELETE_SUCCESS, GET_MY_TOOLS, GET_MY_TOOLS_SUCCESS} from "../Actions/Actions";
 
 const initialState = {
     Tools: [],
     fetching: false,
     error: null,
     DataStart: false,
-    addingTool: false
+    addingTool: false,
+    fetchMyTools: false,
+    Mytools: ''
 }
 
 const reducer = (state = initialState, action) => {
@@ -68,15 +70,22 @@ const reducer = (state = initialState, action) => {
                 Tools: action.payload
             }
         case DELETE_ERROR:
-        return {
+            return {
                 ...state,
                 error: action.payload
-        }
-        // case UPDATE_USER_SUCCESS:
-        //     return {
-        //         ...state,
-                
-        //     }
+            }
+        case GET_MY_TOOLS:
+            return {
+                ...state,
+                fetchMyTools: true
+            }
+        case GET_MY_TOOLS_SUCCESS:
+            return {
+                ...state,
+                fetchMyTools: false,
+                Mytools: action.payload
+            }
+
         default:
             return state;
         }
