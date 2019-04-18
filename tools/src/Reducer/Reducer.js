@@ -1,7 +1,9 @@
 import { FETCHING, SUCCESS, GET_DATA_ERROR,
  GET_DATA_SUCCESS, GET_DATA_FETCH, ADD_TOOL,
  ADD_TOOL_ERROR,ADD_TOOL_SUCCESS, DELETE_ERROR,
-  DELETE_SUCCESS, GET_MY_TOOLS, GET_MY_TOOLS_SUCCESS} from "../Actions/Actions";
+  DELETE_SUCCESS,
+  FETCH_TOOL_SUCCESS, GET_MY_TOOLS, GET_MY_TOOLS_SUCCESS
+} from "../Actions";
 
 const initialState = {
     Tools: [],
@@ -12,6 +14,23 @@ const initialState = {
     fetchMyTools: false,
     Mytools: []
 }
+
+const updateTool = (state, action) => {
+  if (!state.category) {
+    return state;
+  }
+  const { tools } = state.Tools;
+  const newTool = action.payload;
+
+  const foundTool = tools.findIndex(t => t.id === newTool.id);
+  const updatedTools = [...tools];
+  if (foundTool > -1) {
+    updatedTools[foundTool] = newTool;
+    return {...state, Tools: updatedTools};
+  }
+
+  return state;
+};
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -70,7 +89,7 @@ const reducer = (state = initialState, action) => {
                 Tools: action.payload
             }
         case DELETE_ERROR:
-            return {
+        return {
                 ...state,
                 error: action.payload
             }
@@ -86,6 +105,9 @@ const reducer = (state = initialState, action) => {
                 Mytools: action.payload
             }
 
+        //     }
+        case FETCH_TOOL_SUCCESS:
+          return updateTool(state, action.payload);
         default:
             return state;
         }
