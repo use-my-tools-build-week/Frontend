@@ -16,6 +16,7 @@ const ToolWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
+  margin-bottom: 20px;
 `;
 
 const ToolImg = styled.img`
