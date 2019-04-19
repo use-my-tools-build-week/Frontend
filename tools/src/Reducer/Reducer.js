@@ -1,15 +1,37 @@
 import { FETCHING, SUCCESS, GET_DATA_ERROR,
  GET_DATA_SUCCESS, GET_DATA_FETCH, ADD_TOOL,
  ADD_TOOL_ERROR,ADD_TOOL_SUCCESS, DELETE_ERROR,
-  DELETE_SUCCESS, UPDATE_USER_SUCCESS} from "../Actions/Actions";
+  DELETE_SUCCESS,FETCH_TOOL_SUCCESS, GET_MY_TOOLS, 
+  GET_MY_TOOLS_SUCCESS, UPDATE_TOOL, UPDATE_TOOL_SUCCESS
+} from "../Actions";
 
 const initialState = {
     Tools: [],
     fetching: false,
     error: null,
     DataStart: false,
-    addingTool: false
+    addingTool: false,
+    fetchMyTools: false,
+    updatingTool: false,
+    Mytools: []
 }
+
+const updateTool = (state, action) => {
+  if (!state.category) {
+    return state;
+  }
+  const { tools } = state.Tools;
+  const newTool = action.payload;
+
+  const foundTool = tools.findIndex(t => t.id === newTool.id);
+  const updatedTools = [...tools];
+  if (foundTool > -1) {
+    updatedTools[foundTool] = newTool;
+    return {...state, Tools: updatedTools};
+  }
+
+  return state;
+};
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
@@ -54,13 +76,22 @@ const reducer = (state = initialState, action) => {
         case ADD_TOOL_SUCCESS:
             return {
                 ...state,
-                Tools: action.payload,
                 addingTool: false
             }
         case ADD_TOOL_ERROR:
             return {
                 ...state,
                 error: action.payload
+            }
+        case UPDATE_TOOL:
+            return {
+                ...state,
+                updatingTool: true
+            }
+        case UPDATE_TOOL_SUCCESS:
+            return {
+                ...state,
+                updatingTool: false
             }
         case DELETE_SUCCESS:
             return {
@@ -71,12 +102,22 @@ const reducer = (state = initialState, action) => {
         return {
                 ...state,
                 error: action.payload
-        }
-        // case UPDATE_USER_SUCCESS:
-        //     return {
-        //         ...state,
-                
+            }
+        case GET_MY_TOOLS:
+            return {
+                ...state,
+                fetchMyTools: true
+            }
+        case GET_MY_TOOLS_SUCCESS:
+            return {
+                ...state,
+                fetchMyTools: false,
+                Mytools: action.payload
+            }
+
         //     }
+        case FETCH_TOOL_SUCCESS:
+          return updateTool(state, action.payload);
         default:
             return state;
         }

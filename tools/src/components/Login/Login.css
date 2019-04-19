@@ -73,8 +73,7 @@
 
 .input {	
     height: 32px;	
-    width: 328px;	
-    opacity: 0.25;	
+    width: 328px;		
     color: #000000;	
     font-family: "Open Sans";	
     font-size: 14px;	
@@ -84,7 +83,7 @@
     border-radius: 5px;
 }
 
-::placeholder {
+.input::placeholder {
     color: black;
 }
 

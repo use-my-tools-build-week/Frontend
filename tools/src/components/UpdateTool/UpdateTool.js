@@ -1,11 +1,12 @@
 import React from 'react';
 import '../../App.css';
-import './AddTool.css';
+import './UpdateTool.css';
 import WhiteLogo from '../Login/Imgs/WhiteLogo.svg';
 import { connect } from 'react-redux';
-import { AddTools, FetchCategories, FetchConditions } from '../../Actions';
+import { FetchCategories, FetchConditions } from '../../Actions';
+import {UpdateTool, GetMyTools} from '../../Actions/Actions';
 
-class AddToolPage extends React.Component {
+class UpdateToolPage extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -15,6 +16,7 @@ class AddToolPage extends React.Component {
   }
 
   componentDidMount() {
+    this.props.GetMyTools();
     const { categories, conditions } = this.props;
     if (categories.length === 0) {
       this.props.FetchCategories();
@@ -31,14 +33,19 @@ class AddToolPage extends React.Component {
     });
   };
 
-  handleSubmit = e => {
+  handleUpdate = e => {
     e.preventDefault();
-    this.props
-      .AddTools({
+    const {
+        match: {
+          params: { id }
+        }
+    }=this.props
+    this.props.UpdateTool({
         name: this.state.toolName,
         description: this.state.Description,
         category_id: this.state.ToolCategory,
-        condition_id: this.state.Condition
+        condition_id: this.state.Condition,
+        id: id
       })
       .then(() => this.props.history.push('/mytools'));
   };
@@ -49,7 +56,7 @@ class AddToolPage extends React.Component {
         <nav>
           <img src={WhiteLogo} className="Logo" alt="Logo" />
         </nav>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleUpdate}>
           <div>
             <p className="p1">Tool Name</p>
             <input
@@ -112,14 +119,16 @@ class AddToolPage extends React.Component {
 }
 
 const mapStateToProps = state => {
+    console.log(state)
   return {
     tools: state.tools,
     categories: state.categories.categories,
-    conditions: state.conditions.conditions
+    conditions: state.conditions.conditions,
+    mytools: state.Mytools
   };
 };
 
 export default connect(
   mapStateToProps,
-  { AddTools, FetchCategories, FetchConditions }
-)(AddToolPage);
+  { UpdateTool, FetchCategories, FetchConditions, GetMyTools }
+)(UpdateToolPage);

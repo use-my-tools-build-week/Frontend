@@ -17,8 +17,7 @@ export const categoriesReducer = (state = initialState, action) => {
       };
     case ERROR:
       return {
-        ...initialState,
-        categories: state.categories,
+        ...state,
         error: action.payload
       };
     default:

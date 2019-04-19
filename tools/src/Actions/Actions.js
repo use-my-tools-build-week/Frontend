@@ -1,6 +1,7 @@
 
 import AxiosAuth from '../AxiosAuth';
 import Axios from 'axios';
+import { ERROR } from '.';
 
 export const FETCHING = 'FETCHING';
 export const SUCCESS = 'SUCCESS';
@@ -16,7 +17,10 @@ export const TOOL_CATEGORIES = 'TOOL_CATEGORIES';
 export const TOOL_CATEGORIES_SUCCESS = 'TOOL_CATEGORIES_SUCCESS';
 export const TOOL_CATEGORIES_ERROR = 'TOOL_CATEGORIES_ERROR';
 export const UPDATE_USER_SUCCESS = 'UPDATE_USER_SUCCESS';
-
+export const GET_MY_TOOLS = 'GET_MY_TOOLS';
+export const GET_MY_TOOLS_SUCCESS = 'GET_MY_TOOLS_SUCCESS';
+export const UPDATE_TOOL = 'UPDATE_TOOL';
+export const UPDATE_TOOL_SUCCESS = 'UPDATE_TOOL_SUCCESS';
 
 export function ActionLogin(logins) {
     console.log(logins)
@@ -94,7 +98,7 @@ export const FetchTools = () => dispatch => {
   export const AddTools = tool => dispatch => {
       console.log(tool)
     dispatch({type: ADD_TOOL})
-    AxiosAuth().post('https://umtbackend.herokuapp.com/api/tools', tool)
+    return AxiosAuth().post('https://umtbackend.herokuapp.com/api/tools', tool)
     .then(res => {
         dispatch({
             type: ADD_TOOL_SUCCESS,
@@ -110,9 +114,27 @@ export const FetchTools = () => dispatch => {
     })
   }
 
+  export const UpdateTool = tool => dispatch => {
+      console.log(tool)
+    dispatch({type: UPDATE_TOOL})
+    return AxiosAuth().put(`https://umtbackend.herokuapp.com/api/tools/${tool.id}`, tool)
+    .then(res => {
+      dispatch({
+        type: UPDATE_TOOL_SUCCESS,
+        payload: res.data
+      })
+    })
+    .catch(err => {
+      dispatch({
+        type: ERROR,
+        payload: err
+      })
+    })
+  }
+
   export const DeleteTool = id => dispatch => {
       dispatch({type: FETCHING})
-      AxiosAuth().delete(`https://umtbackend.herokuapp.com/api/tools/${id}`, id)
+      return AxiosAuth().delete(`https://umtbackend.herokuapp.com/api/tools/${id}`, id)
       .then(res => {
         dispatch({
           type: DELETE_SUCCESS,
@@ -141,6 +163,24 @@ export const FetchTools = () => dispatch => {
                 type: TOOL_CATEGORIES_ERROR,
                 payload: err
             }
+        })
+    }
+
+    export const GetMyTools = () => dispatch => {
+        dispatch({type: GET_MY_TOOLS})
+        AxiosAuth().get('https://umtbackend.herokuapp.com/api/tools/my_tools')
+        .then(res => {
+            console.log(res)
+           dispatch ({
+                type: GET_MY_TOOLS_SUCCESS,
+                payload: res.data.results
+            })
+        })
+        .catch(err => {
+            dispatch ({
+                type: ERROR,
+                payload: err
+            })
         })
     }
 

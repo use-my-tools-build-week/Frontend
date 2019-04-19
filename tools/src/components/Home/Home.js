@@ -10,6 +10,7 @@ import Nav from '../../Nav/Nav';
 import './Home.css';
 import { Link, Switch, Route } from 'react-router-dom';
 import Category from '../CategoryPages/Category';
+import Tool from '../Tool/Tool';
 
 class Home extends React.Component {
   componentDidMount() {
@@ -26,7 +27,7 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    console.log(this.props.tools);
     return (
       <div>
         <Nav />
@@ -39,7 +40,7 @@ class Home extends React.Component {
                 {/* {this.props.tools &&
                   this.props.tools.map(t => {
                     return (
-                      <div>
+                      <div key={t.id}>
                         <p onClick={() => this.props.DeleteTool(t.id)}>
                           {t.name}
                         </p>
@@ -47,13 +48,13 @@ class Home extends React.Component {
                       </div>
                     );
                   })} */}
+                <h1 className="CategoryHeader">Browse Tools by Category</h1>
                 <div className="CategoriesContainer">
-                  <h1 className="CategoryHeader">Browse Tools by Category</h1>
                   {this.props.categories &&
                     this.props.categories.map(c => (
                       <div className="Categories" key={c.id}>
                         <Link to={`/home/categories/${c.id}`}>
-                          <div class="CategoryCard">
+                          <div className="CategoryCard">
                             <h2 className="CardHead">{c.name}</h2>
                             <h3 className="CardSubTitle">{c.blurb}</h3>
                           </div>{' '}
@@ -61,20 +62,13 @@ class Home extends React.Component {
                       </div>
                     ))}
                 </div>
-                {/* <div className="popularToolsContainer">
-                        <h1>Popular Tools Near You</h1>
-                        {this.props.Tools &&
-                          this.props.Tools.splice(0, 3).map(p => {
-                              console.log(p)
-                              return (
-                                  <div className="PopularContainer" key={p.id}>
-                                        <div className="popularCard">
-                                             <p>{p.name}</p>
-                                        </div>
-                                  </div>
-                                )
-                          })}
-                </div> */}
+                <h1 className="PopularHeader">Popular Tools Near You</h1>
+                <div className="PopularContainer">
+                  {this.props.tools &&
+                    this.props.tools.splice(2,3).map(t => (
+                      <Tool tool={t} key={t.id}/>
+                    ))}
+                </div>
               </>
             )}
           />

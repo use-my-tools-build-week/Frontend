@@ -1,3 +1,10 @@
 h1{
     font-size: 40px;
 }
+
+.catWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}

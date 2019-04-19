@@ -2,7 +2,7 @@ import { ERROR, FETCH_CONDITIONS, FETCH_CONDITIONS_SUCCESS } from '../Actions';
 
 const initialState = {
   conditions: [],
-  fetching: false,
+  fetching: false
 };
 
 export const conditionsReducer = (state = initialState, action) => {
@@ -17,8 +17,7 @@ export const conditionsReducer = (state = initialState, action) => {
       };
     case ERROR:
       return {
-        ...initialState,
-        conditions: state.conditions,
+        ...state,
         error: action.payload
       };
     default:

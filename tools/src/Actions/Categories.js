@@ -27,7 +27,7 @@ export function FetchCategory(id) {
   return dispatch => {
     dispatch({ type: FETCH_CATEGORY });
     return AxiosAuth()
-      .get(`https://umtbackend.herokuapp.com/api/category/${id}`)
+      .get(`https://umtbackend.herokuapp.com/api/categories/${id}`)
       .then(res => {
         dispatch({
           type: FETCH_CATEGORY_SUCCESS,
