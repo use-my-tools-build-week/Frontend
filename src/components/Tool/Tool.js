@@ -17,6 +17,7 @@ const ToolWrapper = styled.div`
   align-items: center;
   position: relative;
   margin-bottom: 20px;
+  cursor: pointer;
 `;
 
 const ToolImg = styled.img`
@@ -33,7 +34,7 @@ export default connect(
 )(({ tool, favoriteTool }) => {
   const [modalShowing, setModalShowing] = useState(false);
   return (
-    <ToolWrapper>
+    <>
       {modalShowing && (
         <ToolModal
           tool={tool}
@@ -41,11 +42,13 @@ export default connect(
           onFavorite={() => favoriteTool(tool.id)}
         />
       )}
+      <ToolWrapper onClick={() => setModalShowing(true)}>
 
-      <ToolImg src={tool.img_url} />
-      <CardAvatar src={tool.loaner_img_url} />
-      <div onClick={() => setModalShowing(true)}>{tool.name}</div>
-      <div>Owner: {`${tool.firstname} ${tool.lastname[0]}.`}</div>
-    </ToolWrapper>
+        <ToolImg src={tool.img_url} />
+        <CardAvatar src={tool.loaner_img_url} />
+        <div>{tool.name}</div>
+        <div>Owner: {`${tool.firstname} ${tool.lastname[0]}.`}</div>
+      </ToolWrapper>
+    </>
   );
 });
