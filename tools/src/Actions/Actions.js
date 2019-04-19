@@ -26,7 +26,7 @@ export function ActionLogin(logins) {
     console.log(logins)
     return dispatch => {
         dispatch({type: FETCHING});
-    return AxiosAuth().post('https://umtbackend-dev.herokuapp.com/api/login', logins)
+    return AxiosAuth().post('https://umtbackend.herokuapp.com/api/login', logins)
         .then(res => {
             console.log(res)
             localStorage.setItem('Token', res.data.token)
@@ -47,7 +47,7 @@ export function ActionSignUp(signups) {
     console.log(signups)
     return dispatch => {
         dispatch({type: FETCHING});
-    return AxiosAuth().post('https://umtbackend-dev.herokuapp.com/api/register', signups)
+    return AxiosAuth().post('https://umtbackend.herokuapp.com/api/register', signups)
         .then(res => {
             console.log(res)
             localStorage.setItem('Token', res.data.token)
@@ -65,7 +65,7 @@ export function ActionSignUp(signups) {
 }
 
 export const updateUser = updateUser => dispatch => {
-    return AxiosAuth().put(`https://umtbackend-dev.herokuapp.com/api/users/update_profile`, updateUser)
+    return AxiosAuth().put(`https://umtbackend.herokuapp.com/api/users/update_profile`, updateUser)
     .then(res => {
         dispatch({
             type: UPDATE_USER_SUCCESS,
@@ -79,7 +79,7 @@ export const updateUser = updateUser => dispatch => {
 
 export const FetchTools = () => dispatch => {
     dispatch({ type: GET_DATA_FETCH });
-    AxiosAuth().get('https://umtbackend-dev.herokuapp.com/api/tools')
+    AxiosAuth().get('https://umtbackend.herokuapp.com/api/tools')
       .then(res => {
           console.log(res)
         dispatch({
@@ -98,7 +98,7 @@ export const FetchTools = () => dispatch => {
   export const AddTools = tool => dispatch => {
       console.log(tool)
     dispatch({type: ADD_TOOL})
-    return AxiosAuth().post('https://umtbackend-dev.herokuapp.com/api/tools', tool)
+    return AxiosAuth().post('https://umtbackend.herokuapp.com/api/tools', tool)
     .then(res => {
         dispatch({
             type: ADD_TOOL_SUCCESS,
@@ -117,7 +117,7 @@ export const FetchTools = () => dispatch => {
   export const UpdateTool = tool => dispatch => {
       console.log(tool)
     dispatch({type: UPDATE_TOOL})
-    return AxiosAuth().put(`https://umtbackend-dev.herokuapp.com/api/tools/${tool.id}`, tool)
+    return AxiosAuth().put(`https://umtbackend.herokuapp.com/api/tools/${tool.id}`, tool)
     .then(res => {
       dispatch({
         type: UPDATE_TOOL_SUCCESS,
@@ -134,7 +134,7 @@ export const FetchTools = () => dispatch => {
 
   export const DeleteTool = id => dispatch => {
       dispatch({type: FETCHING})
-      return AxiosAuth().delete(`https://umtbackend-dev.herokuapp.com/api/tools/${id}`, id)
+      return AxiosAuth().delete(`https://umtbackend.herokuapp.com/api/tools/${id}`, id)
       .then(res => {
         dispatch({
           type: DELETE_SUCCESS,
@@ -151,7 +151,7 @@ export const FetchTools = () => dispatch => {
 
     export const ToolCategories = () => dispatch => {
         dispatch({type: TOOL_CATEGORIES})
-        AxiosAuth().get('https://umtbackend-dev.herokuapp.com/api/categories')
+        AxiosAuth().get('https://umtbackend.herokuapp.com/api/categories')
         .then(res => {
            return {
                 type: TOOL_CATEGORIES_SUCCESS,
@@ -168,7 +168,7 @@ export const FetchTools = () => dispatch => {
 
     export const GetMyTools = () => dispatch => {
         dispatch({type: GET_MY_TOOLS})
-        AxiosAuth().get('https://umtbackend-dev.herokuapp.com/api/tools/my_tools')
+        AxiosAuth().get('https://umtbackend.herokuapp.com/api/tools/my_tools')
         .then(res => {
             console.log(res)
            dispatch ({

@@ -6,7 +6,7 @@ export function FetchConditions() {
   return dispatch => {
     dispatch({ type: FETCH_CONDITIONS });
     return AxiosAuth()
-      .get('https://umtbackend-dev.herokuapp.com/api/conditions')
+      .get('https://umtbackend.herokuapp.com/api/conditions')
       .then(res => {
         dispatch({
           type: FETCH_CONDITIONS_SUCCESS,
