@@ -12,7 +12,7 @@ export const fetchToolSuccess = tool => ({
 export const fetchTool = id => dispatch => {
   dispatch({ type: FETCH_TOOL });
   return AxiosAuth()
-    .get(`https://umtbackend.herokuapp.com/api/tools/${id}`)
+    .get(`https://umtbackend-dev.herokuapp.com/api/tools/${id}`)
     .then(res => dispatch(fetchToolSuccess(res.data)))
     .catch(console.log);
 };
@@ -20,7 +20,7 @@ export const fetchTool = id => dispatch => {
 export const favoriteTool = id => dispatch => {
   dispatch({ type: FAVORITE_TOOL });
   return AxiosAuth()
-    .post(`https://umtbackend.herokuapp.com/api/favorites/`, {tool_id: id})
+    .post(`https://umtbackend-dev.herokuapp.com/api/favorites/`, {tool_id: id})
     .then(res => dispatch(fetchToolSuccess(res.data)))
     .catch(console.log);
 };
