@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
-import ToolModal from './ToolModal';
-import { CardAvatar } from '../Common/Avatar';
-import { fetchTool, fetchToolSuccess, favoriteTool } from '../../Actions';
+import React, { useState } from "react";
+import styled from "styled-components";
+import { connect } from "react-redux";
+import ToolModal from "./ToolModal";
+import { CardAvatar } from "../Common/Avatar";
+import { fetchTool, fetchToolSuccess, favoriteTool } from "../../Actions";
 
 const ToolWrapper = styled.div`
   height: 240px;

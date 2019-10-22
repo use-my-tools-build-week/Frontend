@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import { connect } from 'react-redux';
-import ToolModal from './ToolModal';
-import { CardAvatar } from '../Common/Avatar';
-import { fetchTool, fetchToolSuccess, favoriteTool } from '../../Actions';
-import {DeleteTool, GetMyTools, UpdateTool} from '../../Actions/Actions';
-
+import React, { useState } from "react";
+import styled from "styled-components";
+import { connect } from "react-redux";
+import ToolModal from "./ToolModal";
+import { CardAvatar } from "../Common/Avatar";
+import { fetchTool, fetchToolSuccess, favoriteTool } from "../../Actions";
+import { DeleteTool, GetMyTools, UpdateTool } from "../../Actions/Actions";
 
 const ToolWrapper = styled.div`
   height: 240px;
@@ -19,6 +18,8 @@ const ToolWrapper = styled.div`
   align-items: center;
   position: relative;
   margin-bottom: 62px;
+  box-shadow: 0 0 5px 1px rgb(0, 0, 0), 0 6px 5px 1px rgb(0, 0, 0);
+  padding: 10px;
 `;
 
 const ToolImg = styled.img`
@@ -31,53 +32,47 @@ const ToolImg = styled.img`
 `;
 
 const MyButton1 = styled.button`
-    height: 31px;	
-    width: 78px;
-    color: #00A0FF;	
-    font-family: "Open Sans";	
-    font-size: 14px;	
-    line-height: 20px;	
-    text-align: center;
-    background: white;
-    border: 2px solid #00a0ff;
-    border-radius: 5px;
-    margin-top: 22px;
-    margin-right: 50px;
-    
-`
-const MyButton2 = styled.button`
-    height: 31px;	
-    width: 78px;
-    color: #00A0FF;	
-    font-family: "Open Sans";	
-    font-size: 14px;	
-    line-height: 20px;	
-    text-align: center;
-    background: white;
-    border: 2px solid #00a0ff;
-    border-radius: 5px;
-    margin-top: 22px;
-    
-`
-const Toolname = styled.div`
-    color: #000000;	
-    font-family: "Open Sans";	
-    font-size: 16px;	
-    font-weight: bold;	
-    line-height: 24px;	
-    text-align: center;
+  height: 31px;
+  width: 78px;
+  color: #00a0ff;
+  font-family: "Open Sans";
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  background: white;
+  border: 2px solid #00a0ff;
+  border-radius: 5px;
+  margin-top: 22px;
+  margin-right: 50px;
 `;
-
-
-
-
+const MyButton2 = styled.button`
+  height: 31px;
+  width: 78px;
+  color: #00a0ff;
+  font-family: "Open Sans";
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  background: white;
+  border: 2px solid #00a0ff;
+  border-radius: 5px;
+  margin-top: 22px;
+`;
+const Toolname = styled.div`
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  text-align: center;
+`;
 
 export default connect(
   null,
   { fetchToolSuccess, favoriteTool, DeleteTool, GetMyTools, UpdateTool }
 )(({ tool, favoriteTool, DeleteTool, GetMyTools, UpdateTool }) => {
   const [modalShowing, setModalShowing] = useState(false);
- 
+
   return (
     <ToolWrapper>
       {modalShowing && (
@@ -91,8 +86,12 @@ export default connect(
       <CardAvatar src={tool.loaner_img_url} />
       <Toolname onClick={() => setModalShowing(true)}>{tool.name}</Toolname>
       <div>
-          <a href={`/updatetool/${tool.id}`}><MyButton1>Modify</MyButton1></a>
-          <MyButton2 onClick={() => DeleteTool(tool.id).then(GetMyTools)}>Delete</MyButton2>
+        <a href={`/updatetool/${tool.id}`}>
+          <MyButton1>Modify</MyButton1>
+        </a>
+        <MyButton2 onClick={() => DeleteTool(tool.id).then(GetMyTools)}>
+          Delete
+        </MyButton2>
       </div>
     </ToolWrapper>
   );
